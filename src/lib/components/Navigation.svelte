@@ -1,5 +1,5 @@
-<!-- Navigation.svelte -->
-<script>
+
+<script lang="ts">
 	export let scrollY = 0;
 	export let currentPath = '/';
 	
@@ -10,122 +10,38 @@
 		{ href: '/about', label: 'About' },
 		{ href: '/services', label: 'Services' },
 		{ href: '/portfolio', label: 'Portfolio' },
-		// { href: '/contact', label: 'Contact' }
 	];
 </script>
 
-<nav class="nav" class:scrolled={isScrolled}>
-	<div class="container">
-		<div class="nav-content">
-			<a href="/" class="logo">
+<nav
+  class={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+    ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm'
+                 : 'bg-white/60 backdrop-blur-sm'}`}
+>
+
+	<div class="max-w-6xl mx-auto px-6">
+		<div class="flex items-center justify-between h-20">
+			<a href="/" class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
 				Ariel Pillemer
 			</a>
 			
-			<div class="nav-links">
+			<div class="hidden md:flex items-center space-x-8">
 				{#each navItems as item}
 					<a 
 						href={item.href} 
-						class="nav-link"
-						class:active={currentPath === item.href}
+						class="relative text-slate-600 hover:text-slate-900 font-medium transition-colors group"
+						class:text-slate-900={currentPath === item.href}
 					>
 						{item.label}
+						<span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"
+						      class:w-full={currentPath === item.href}></span>
 					</a>
 				{/each}
 			</div>
 			
-			<a href="/contact" class="btn btn-primary nav-cta">
-				Get in touch
+			<a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-md">
+				Get Started
 			</a>
 		</div>
 	</div>
 </nav>
-
-<style>
-	.nav {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1000;
-		background: rgba(135, 128, 128, 0.8);
-		backdrop-filter: blur(12px);
-		border-bottom: 1px solid transparent;
-		transition: all var(--transition-base);
-		padding-left: 8px;
-		padding-right: 8px;
-	}
-
-	.nav.scrolled {
-		background: rgba(255, 255, 255, 0.95);
-		border-bottom-color: var(--border-light);
-		box-shadow: var(--shadow-sm);
-	}
-
-	.nav-content {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		height: 80px;
-	}
-
-	.logo {
-		font-size: var(--font-size-xl);
-		font-weight: 700;
-		color: var(--text-primary);
-		text-decoration: none;
-		letter-spacing: -0.025em;
-	}
-
-	.nav-links {
-		display: flex;
-		align-items: center;
-		gap: 6rem;
-	}
-
-	.nav-link {
-		color: var(--text-secondary);
-		font-weight: 450;
-		position: relative;
-		transition: color var(--transition-fast);
-	}
-
-	.nav-link:hover,
-	.nav-link.active {
-		color: var(--text-primary);
-	}
-
-	.nav-link::after {
-		content: '';
-		position: absolute;
-		bottom: -8px;
-		left: 0;
-		width: 0;
-		height: 2px;
-		background: var(--primary);
-		transition: width var(--transition-base);
-	}
-
-	.nav-link:hover::after,
-	.nav-link.active::after {
-		width: 100%;
-	}
-
-	.nav-cta {
-		padding: var(--space-sm) var(--space-lg);
-		font-size: var(--font-size-sm);
-	}
-
-	@media (max-width: 768px) {
-		.nav-links {
-			display: none;
-		}
-		
-		.nav-content {
-			height: 70px;
-		}
-		
-		.logo {
-			font-size: var(--font-size-lg);
-		}
-	}
-</style>
