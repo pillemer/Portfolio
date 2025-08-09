@@ -2,6 +2,15 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { fade, fly } from "svelte/transition";
+    
+    // Components
+    import ValueCard from "$lib/components/ValueCard.svelte";
+    import ProcessStep from "$lib/components/ProcessStep.svelte";
+    
+    // Icons
+    import ArrowRight from "$lib/assets/icons/ArrowRight.svelte";
+    import Check from "$lib/assets/icons/Check.svelte";
+    import Payment from "$lib/assets/icons/Payment.svelte";
 
     let mounted = false;
     let heroRef;
@@ -18,12 +27,19 @@
         intersectionObserver = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
+                    // Add visible class when entering viewport
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
+                    } else {
+                        // Remove visible class when leaving viewport
+                        entry.target.classList.remove("visible");
                     }
                 });
             },
-            { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+            { 
+                threshold: 0.1,
+                rootMargin: "-50px 0px -50px 0px" // Adjusted to trigger slightly earlier
+            },
         );
 
         // Observe elements
@@ -110,19 +126,7 @@
                 >
                     <a href="/services" class="btn btn-primary group">
                         See What I Can Build
-                        <svg
-                            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                        </svg>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a href="/portfolio" class="btn btn-secondary">
                         View Examples
@@ -216,107 +220,35 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Value Prop 1: Professional Design -->
-            <div
-                class="fade-in card card-hover text-center"
-                style="animation-delay: 0.2s;"
-            >
-                <div
-                    class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6"
-                >
-                    <svg
-                        class="w-8 h-8 text-blue-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a4 4 0 004-4V5z"
-                        />
-                    </svg>
-                </div>
-                <h3 class="heading-3 mb-4">Build Trust Instantly</h3>
-                <p class="body mb-6">
-                    Clean, professional design that makes potential clients feel
-                    safe and confident about reaching out to you.
-                </p>
-                <a
-                    href="/services"
-                    class="text-blue-600 font-medium hover:text-blue-700"
-                    >Learn more →</a
-                >
-            </div>
+            <ValueCard
+                title="Build Trust Instantly"
+                description="Clean, professional design that makes potential clients feel safe and confident about reaching out to you."
+                icon={ArrowRight}
+                iconBgColor="bg-blue-100"
+                iconColor="text-blue-600"
+                linkText="Learn more"
+                delay="0.2s"
+            />
 
-            <!-- Value Prop 2: Easy Booking -->
-            <div
-                class="fade-in card card-hover text-center"
-                style="animation-delay: 0.4s;"
-            >
-                <div
-                    class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6"
-                >
-                    <svg
-                        class="w-8 h-8 text-green-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 9l3 3 8-8"
-                        />
-                    </svg>
-                </div>
-                <h3 class="heading-3 mb-4">Simple Booking</h3>
-                <p class="body mb-6">
-                    Integrated booking system that lets clients schedule
-                    appointments 24/7, reducing phone calls and admin work.
-                </p>
-                <a
-                    href="/services"
-                    class="text-blue-600 font-medium hover:text-blue-700"
-                    >See demo →</a
-                >
-            </div>
+            <ValueCard
+                title="Simple Booking"
+                description="Integrated booking system that lets clients schedule appointments 24/7, reducing phone calls and admin work."
+                icon={Check}
+                iconBgColor="bg-green-100"
+                iconColor="text-green-600"
+                linkText="See demo"
+                delay="0.4s"
+            />
 
-            <!-- Value Prop 3: Get Paid -->
-            <div
-                class="fade-in card card-hover text-center"
-                style="animation-delay: 0.6s;"
-            >
-                <div
-                    class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6"
-                >
-                    <svg
-                        class="w-8 h-8 text-purple-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                        />
-                    </svg>
-                </div>
-                <h3 class="heading-3 mb-4">Secure Payments</h3>
-                <p class="body mb-6">
-                    Accept payments online with secure, GDPR-compliant payment
-                    processing. Get paid faster, reduce no-shows.
-                </p>
-                <a
-                    href="/services"
-                    class="text-blue-600 font-medium hover:text-blue-700"
-                    >Try it out →</a
-                >
-            </div>
+            <ValueCard
+                title="Secure Payments"
+                description="Accept payments online with secure, GDPR-compliant payment processing. Get paid faster, reduce no-shows."
+                icon={Payment}
+                iconBgColor="bg-purple-100"
+                iconColor="text-purple-600"
+                linkText="Try it out"
+                delay="0.6s"
+            />
         </div>
     </div>
 </section>
@@ -335,71 +267,30 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-12">
-            <!-- Step 1 -->
-            <div
-                class="slide-in-left text-center"
-                style="animation-delay: 0.2s;"
-            >
-                <div class="relative">
-                    <div
-                        class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
-                    >
-                        1
-                    </div>
-                    {#if mounted}
-                        <div
-                            class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-slate-200 -translate-y-1/2"
-                        ></div>
-                    {/if}
-                </div>
-                <h3 class="heading-3 mb-4">Discovery Call</h3>
-                <p class="body">
-                    We discuss your practice, goals, and what you need from your
-                    website. I'll show you examples and explain the process.
-                </p>
-            </div>
+            <ProcessStep
+                number={1}
+                title="Discovery Call"
+                description="We discuss your practice, goals, and what you need from your website. I'll show you examples and explain the process."
+                delay="0.2s"
+                {mounted}
+            />
 
-            <!-- Step 2 -->
-            <div
-                class="slide-in-left text-center"
-                style="animation-delay: 0.4s;"
-            >
-                <div class="relative">
-                    <div
-                        class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
-                    >
-                        2
-                    </div>
-                    {#if mounted}
-                        <div
-                            class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-slate-200 -translate-y-1/2"
-                        ></div>
-                    {/if}
-                </div>
-                <h3 class="heading-3 mb-4">Design & Build</h3>
-                <p class="body">
-                    I create your website with your content, branding, and
-                    functionality. You'll see progress updates throughout the
-                    process.
-                </p>
-            </div>
+            <ProcessStep
+                number={2}
+                title="Design & Build"
+                description="I create your website with your content, branding, and functionality. You'll see progress updates throughout the process."
+                delay="0.4s"
+                {mounted}
+            />
 
-            <!-- Step 3 -->
-            <div
-                class="slide-in-left text-center"
-                style="animation-delay: 0.6s;"
-            >
-                <div
-                    class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
-                >
-                    3
-                </div>
-                <h3 class="heading-3 mb-4">Launch & Support</h3>
-                <p class="body">
-                    Your website goes live with full training on how to manage
-                    bookings and content. Ongoing support included.
-                </p>
-            </div>
+            <ProcessStep
+                number={3}
+                title="Launch & Support"
+                description="Your website goes live with full training on how to manage bookings and content. Ongoing support included."
+                delay="0.6s"
+                {mounted}
+                showConnector={false}
+            />
         </div>
     </div>
 </section>
