@@ -8,6 +8,18 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+	interface Window {
+		about: {
+			webApplication: {
+				buildHash: string;
+				buildDate: string;
+			};
+		};
+	}
+	const __BUILD_CONST_BUILD_VERSION__: string;
+	const __BUILD_CONST_BUILD_HASH__: string;
+	const __BUILD_CONST_BUILD_DATE__: string;
+	const __BUILD_CONST_ENVIRONMENT__: string;
 }
 
-export {};
+export { };

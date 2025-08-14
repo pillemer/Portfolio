@@ -4,6 +4,11 @@
     import Navigation from '$lib/components/Navigation.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import '../app.css';
+    import { initWindowAbout } from '$lib/utils/about.js';
+  
+  onMount(() => {
+    initWindowAbout();
+  });
     
     let scrollY = 0;
     let mounted = false;
