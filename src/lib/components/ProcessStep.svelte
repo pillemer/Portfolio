@@ -1,6 +1,6 @@
 <!-- Process Step component -->
 <script lang="ts">
-    export let number: number;
+    export let number: string;
     export let title: string;
     export let description: string;
     export let showConnector = true;

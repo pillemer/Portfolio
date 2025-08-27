@@ -1,16 +1,12 @@
 
 <script lang="ts">
+	import { siteContent } from "$lib/utils/content";
+	
 	export let scrollY = 0;
 	export let currentPath = '/';
 	
 	$: isScrolled = scrollY > 50;
-	
-	const navItems = [
-		{ href: '/', label: 'Home' },
-		{ href: '/about', label: 'About' },
-		{ href: '/services', label: 'Services' },
-		{ href: '/portfolio', label: 'Portfolio' },
-	];
+	const { navigation } = siteContent.global;
 </script>
 
 <nav
@@ -22,11 +18,11 @@
 	<div class="max-w-6xl mx-auto px-6">
 		<div class="flex items-center justify-between h-20">
 			<a href="/" class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
-				Ariel Pillemer
+				{navigation.logo}
 			</a>
 			
 			<div class="hidden md:flex items-center space-x-8">
-				{#each navItems as item}
+				{#each navigation.items as item}
 					<a 
 						href={item.href} 
 						class="relative text-slate-600 hover:text-slate-900 font-medium transition-colors group"
@@ -39,9 +35,8 @@
 				{/each}
 			</div>
 			
-			<a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-md">
-				Get Started
-			</a>
+			<a href={navigation.cta.href} class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-md">
+				{navigation.cta.label}
 		</div>
 	</div>
 </nav>

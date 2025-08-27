@@ -1,9 +1,10 @@
-<!-- src/routes/+page.svelte - Homepage -->
 <script lang="ts">
     import { onMount } from "svelte";
     import { fade, fly } from "svelte/transition";
+    import { siteContent } from "$lib/utils/content";
     
     // Components
+    import PageWrapper from "$lib/components/PageWrapper.svelte";
     import ValueCard from "$lib/components/ValueCard.svelte";
     import ProcessStep from "$lib/components/ProcessStep.svelte";
     
@@ -57,16 +58,12 @@
     });
 </script>
 
-<svelte:head>
-    <title>Ariel Pillemer</title>
-    <meta
-        name="description"
-        content="Clean, professional websites that help professionals attract more clients. Specializing in booking systems, online payments, and modern design."
-    />
-</svelte:head>
-
-<!-- Hero Section -->
-<section
+<PageWrapper
+    title={siteContent.global.siteName}
+    description={siteContent.home.hero.description}
+>
+    <!-- Hero Section -->
+    <section
     class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100"
 >
     <!-- Subtle Background Pattern -->
@@ -85,7 +82,7 @@
                     <span
                         class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
                     >
-                        Professional Website Design
+                        {siteContent.home.hero.badge}
                     </span>
                 </div>
 
@@ -93,9 +90,9 @@
                     in:fly={{ y: 30, duration: 800, delay: 400 }}
                     class="heading-1 mb-6"
                 >
-                    Beautiful websites that help
+                    {siteContent.home.hero.title}
                     <span class="text-blue-600 relative">
-                        professionals grow
+                        {siteContent.home.hero.titleHighlight}
                         <svg
                             class="absolute -bottom-2 left-0 w-full h-3 text-blue-200"
                             viewBox="0 0 200 12"
@@ -115,21 +112,19 @@
                     in:fly={{ y: 30, duration: 800, delay: 600 }}
                     class="body-large mb-8 max-w-2xl mx-auto"
                 >
-                    Clean, professional websites with integrated booking systems
-                    and online payments. Designed specifically for professionals
-                    who want to attract more clients.
+                    {siteContent.home.hero.description}
                 </p>
 
                 <div
                     in:fly={{ y: 30, duration: 800, delay: 800 }}
                     class="flex flex-col sm:flex-row gap-4 justify-center mb-12"
                 >
-                    <a href="/services" class="btn btn-primary group">
-                        See What I Can Build
+                    <a href={siteContent.home.hero.cta.primary.href} class="btn btn-primary group">
+                        {siteContent.home.hero.cta.primary.text}
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
-                    <a href="/portfolio" class="btn btn-secondary">
-                        View Examples
+                    <a href={siteContent.home.hero.cta.secondary.href} class="btn btn-secondary">
+                        {siteContent.home.hero.cta.secondary.text}
                     </a>
                 </div>
             {/if}
@@ -158,48 +153,22 @@
     <div class="container-custom">
         <div class="fade-in text-center mb-16">
             <p class="text-slate-500 text-sm font-medium mb-8">
-                TRUSTED BY MANY PROFESSIONALS
+                {siteContent.home.trust.title}
             </p>
             <div
                 class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60"
             >
-                <!-- Mock trust badges/logos -->
-                <div class="flex items-center justify-center">
-                    <div
-                        class="w-24 h-12 bg-slate-100 rounded flex items-center justify-center"
-                    >
-                        <span class="text-xs font-medium text-slate-400"
-                            >BACP</span
+                {#each siteContent.home.trust.badges as badge}
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="w-24 h-12 bg-slate-100 rounded flex items-center justify-center"
                         >
+                            <span class="text-xs font-medium text-slate-400"
+                                >{badge.text}</span
+                            >
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-center">
-                    <div
-                        class="w-24 h-12 bg-slate-100 rounded flex items-center justify-center"
-                    >
-                        <span class="text-xs font-medium text-slate-400"
-                            >BPS</span
-                        >
-                    </div>
-                </div>
-                <div class="flex items-center justify-center">
-                    <div
-                        class="w-24 h-12 bg-slate-100 rounded flex items-center justify-center"
-                    >
-                        <span class="text-xs font-medium text-slate-400"
-                            >UKCP</span
-                        >
-                    </div>
-                </div>
-                <div class="flex items-center justify-center">
-                    <div
-                        class="w-24 h-12 bg-slate-100 rounded flex items-center justify-center"
-                    >
-                        <span class="text-xs font-medium text-slate-400"
-                            >HCPC</span
-                        >
-                    </div>
-                </div>
+                {/each}
             </div>
         </div>
     </div>
@@ -210,45 +179,25 @@
     <div class="container-custom">
         <div class="text-center mb-16">
             <h2 class="slide-in-left heading-2 mb-4">
-                Everything your practice needs online
+                {siteContent.home.valueProps.title}
             </h2>
             <p class="slide-in-right body-large max-w-2xl mx-auto">
-                From professional design to booking systems, I build websites
-                that help therapists focus on what matters most - helping their
-                clients.
+                {siteContent.home.valueProps.description}
             </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <ValueCard
-                title="Build Trust Instantly"
-                description="Clean, professional design that makes potential clients feel safe and confident about reaching out to you."
-                icon={ArrowRight}
-                iconBgColor="bg-blue-100"
-                iconColor="text-blue-600"
-                linkText="Learn more"
-                delay="0.2s"
-            />
-
-            <ValueCard
-                title="Simple Booking"
-                description="Integrated booking system that lets clients schedule appointments 24/7, reducing phone calls and admin work."
-                icon={Check}
-                iconBgColor="bg-green-100"
-                iconColor="text-green-600"
-                linkText="See demo"
-                delay="0.4s"
-            />
-
-            <ValueCard
-                title="Secure Payments"
-                description="Accept payments online with secure, GDPR-compliant payment processing. Get paid faster, reduce no-shows."
-                icon={Payment}
-                iconBgColor="bg-purple-100"
-                iconColor="text-purple-600"
-                linkText="Try it out"
-                delay="0.6s"
-            />
+            {#each siteContent.home.valueProps.cards as card, i}
+                <ValueCard
+                    title={card.title}
+                    description={card.description}
+                    icon={card.iconType === 'ArrowRight' ? ArrowRight : card.iconType === 'Check' ? Check : Payment}
+                    iconBgColor={card.iconBgColor}
+                    iconColor={card.iconColor}
+                    linkText={card.linkText}
+                    delay={`${0.2 * (i + 1)}s`}
+                />
+            {/each}
         </div>
     </div>
 </section>
@@ -258,39 +207,24 @@
     <div class="container-custom">
         <div class="text-center mb-16">
             <h2 class="slide-in-left heading-2 mb-4">
-                Simple process, professional results
+                {siteContent.home.process.title}
             </h2>
             <p class="slide-in-right body-large max-w-2xl mx-auto">
-                From initial consultation to launch, I handle everything so you
-                can focus on your practice.
+                {siteContent.home.process.description}
             </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-12">
-            <ProcessStep
-                number={1}
-                title="Discovery Call"
-                description="We discuss your practice, goals, and what you need from your website. I'll show you examples and explain the process."
-                delay="0.2s"
-                {mounted}
-            />
-
-            <ProcessStep
-                number={2}
-                title="Design & Build"
-                description="I create your website with your content, branding, and functionality. You'll see progress updates throughout the process."
-                delay="0.4s"
-                {mounted}
-            />
-
-            <ProcessStep
-                number={3}
-                title="Launch & Support"
-                description="Your website goes live with full training on how to manage bookings and content. Ongoing support included."
-                delay="0.6s"
-                {mounted}
-                showConnector={false}
-            />
+            {#each siteContent.home.process.steps as step, i}
+                <ProcessStep
+                    number={step.number}
+                    title={step.title}
+                    description={step.description}
+                    delay={`${0.2 * (i + 1)}s`}
+                    {mounted}
+                    showConnector={i !== siteContent.home.process.steps.length - 1}
+                />
+            {/each}
         </div>
     </div>
 </section>
@@ -299,18 +233,12 @@
 <section class="section-sm bg-blue-600 text-white" bind:this={statsRef}>
     <div class="container-custom">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-            <div class="fade-in">
-                <div class="text-3xl md:text-4xl font-bold mb-2">5+</div>
-                <div class="text-blue-100">Years Experience</div>
-            </div>
-            <div class="fade-in" style="animation-delay: 0.4s;">
-                <div class="text-3xl md:text-4xl font-bold mb-2">100%</div>
-                <div class="text-blue-100">Client Satisfaction</div>
-            </div>
-            <div class="fade-in" style="animation-delay: 0.6s;">
-                <div class="text-3xl md:text-4xl font-bold mb-2">24h</div>
-                <div class="text-blue-100">Average Response</div>
-            </div>
+            {#each siteContent.home.stats.items as stat, i}
+                <div class="fade-in" style={i > 0 ? `animation-delay: ${i * 0.2}s` : ''}>
+                    <div class="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
+                    <div class="text-blue-100">{stat.label}</div>
+                </div>
+            {/each}
         </div>
     </div>
 </section>
@@ -320,20 +248,20 @@
     <div class="container-custom text-center">
         <div class="max-w-3xl mx-auto">
             <h2 class="fade-in heading-2 mb-6">
-                Ready to grow your practice online?
+                {siteContent.home.finalCta.title}
             </h2>
             <p class="fade-in body-large mb-8">
-                Let's build you a professional website that attracts more
-                clients and makes running your practice easier.
+                {siteContent.home.finalCta.description}
             </p>
             <div class="fade-in flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/services" class="btn btn-primary"
-                    >See What I Can Build</a
-                >
-                <a href="/contact" class="btn btn-secondary"
-                    >Start Your Project</a
-                >
+                <a href={siteContent.home.finalCta.cta.primary.href} class="btn btn-primary">
+                    {siteContent.home.finalCta.cta.primary.text}
+                </a>
+                <a href={siteContent.home.finalCta.cta.secondary.href} class="btn btn-secondary">
+                    {siteContent.home.finalCta.cta.secondary.text}
+                </a>
             </div>
         </div>
     </div>
 </section>
+</PageWrapper>
