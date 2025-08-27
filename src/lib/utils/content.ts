@@ -162,7 +162,6 @@ export const siteContent = {
           "Every website I build is tailored to the specific needs of healthcare professionals, incorporating essential features like secure contact forms, appointment scheduling, and HIPAA-compliant communication channels.",
         ],
       },
-      // Add other about sections as needed
     },
   },
   
@@ -261,4 +260,93 @@ export const siteContent = {
       buttonText: "Schedule a Consultation",
     },
   },
+  
+  contact: {
+    meta: {
+        title: "Contact - Let's Build Your Perfect Therapist Website",
+        description: "Get in touch to discuss your therapist website project. Free discovery call to understand your needs and show you what's possible."
+    },
+    header: {
+        title: "Let's build something amazing",
+        subtitle: "Tell me about your practice and let's schedule a discovery call to discuss your perfect website."
+    },
+    steps: [
+        {
+            title: "Tell me about you",
+            subtitle: "Let's start with the basics",
+            icon: "👋",
+            fields: ['firstName', 'lastName', 'email']
+        },
+        {
+            title: "Your practice",
+            subtitle: "Help me understand your needs",
+            icon: "🏥",
+            fields: ['practiceType', 'practiceStage', 'currentWebsite']
+        },
+        {
+            title: "Project details",
+            subtitle: "What would you like me to build?",
+            icon: "💡",
+            fields: ['services', 'timeline', 'budget']
+        },
+        {
+            title: "Book discovery call",
+            subtitle: "Let's schedule a chat",
+            icon: "📅",
+            fields: ['preferredDate', 'preferredTime', 'message']
+        }
+    ],
+    practiceTypes: [
+        'Individual Therapy',
+        'Couples Counseling',
+        'Family Therapy',
+        'Group Therapy',
+        'Clinical Psychology',
+        'Counseling Psychology',
+        'Other'
+    ],
+    practiceStages: [
+        'Just starting out',
+        'Established (1-3 years)',
+        'Growing (3-10 years)',
+        'Well-established (10+ years)'
+    ],
+    serviceOptions: [
+        'New Website Design',
+        'Website Redesign',
+        'Online Booking System',
+        'Payment Processing',
+        'SEO Optimization',
+        'Branding & Logo',
+        'Content Writing',
+        'Ongoing Maintenance'
+    ],
+    budgetRanges: [
+        '£2,000 - £3,000',
+        '£3,000 - £5,000',
+        '£5,000 - £8,000',
+        '£8,000+'
+    ],
+    timeSlots: [
+        '9:00 AM', '10:00 AM', '11:00 AM',
+        '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'
+    ],
+    successMessage: {
+        title: "Thank you!",
+        message: "I've received your information and will email you within 24 hours to schedule our discovery call.",
+        features: [
+            "Response within 24 hours",
+            "Free 30-minute discovery call"
+        ]
+    },
+    nextSteps: {
+        title: "What happens next?",
+        steps: [
+            "Free 30-minute discovery call",
+            "I'll show you examples and discuss your needs",
+            "No pressure - just a friendly chat about your project",
+            "If we're a good fit, I'll send you a detailed proposal"
+        ]
+    }
+  }
 };
