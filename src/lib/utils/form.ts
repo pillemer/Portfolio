@@ -1,3 +1,5 @@
+import { formSteps } from './formConfig';
+
 export type FormData = {
     // Step 1: Basic Info
     firstName: string;
@@ -23,10 +25,11 @@ export type FormData = {
 
 export type StepErrors = Record<string, string>;
 
-export function validateStep(step: number, formData: FormData, stepFields: string[]): StepErrors {
+export function validateStep(step: number, formData: FormData): StepErrors {
     const stepErrors: StepErrors = {};
+    const { requiredFields } = formSteps[step];
 
-    stepFields.forEach(field => {
+    requiredFields.forEach(field => {
         const value = formData[field as keyof FormData];
         if (!value || (Array.isArray(value) && value.length === 0)) {
             stepErrors[field] = 'This field is required';

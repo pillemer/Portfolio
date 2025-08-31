@@ -274,27 +274,23 @@ export const siteContent = {
         {
             title: "Tell me about you",
             subtitle: "Let's start with the basics",
-            icon: "👋",
-            fields: ['firstName', 'lastName', 'email']
+            icon: "👋"
         },
         {
             title: "Your practice",
             subtitle: "Help me understand your needs",
-            icon: "🏥",
-            fields: ['practiceType', 'practiceStage', 'currentWebsite']
+            icon: "🏥"
         },
         {
             title: "Project details",
             subtitle: "What would you like me to build?",
-            icon: "💡",
-            fields: ['services', 'timeline', 'budget']
+            icon: "💡"
         },
         {
             title: "Book discovery call",
-            subtitle: "Let's schedule a chat",
-            icon: "📅",
-            fields: ['preferredDate', 'preferredTime', 'message']
-        }
+            subtitle: "Let's schedule a time to chat",
+            icon: "�"
+        },
     ],
     practiceTypes: [
         'Individual Therapy',
@@ -331,6 +327,27 @@ export const siteContent = {
         '9:00 AM', '10:00 AM', '11:00 AM',
         '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'
     ],
+    summary: {
+        title: "Review Your Information",
+        sections: {
+            contact: {
+                title: "Contact Details"
+            },
+            practice: {
+                title: "Practice Information",
+                website: "Current website:"
+            },
+            project: {
+                title: "Project Requirements",
+                timeline: "Timeline:",
+                budget: "Budget:"
+            },
+            message: {
+                title: "Additional Message"
+            }
+        },
+        scheduleCall: "Schedule Your Discovery Call"
+    },
     successMessage: {
         title: "Thank you!",
         message: "I've received your information and will email you within 24 hours to schedule our discovery call.",
@@ -342,7 +359,7 @@ export const siteContent = {
     nextSteps: {
         title: "What happens next?",
         steps: [
-            "Free 30-minute discovery call",
+            "30-minute discovery call",
             "I'll show you examples and discuss your needs",
             "No pressure - just a friendly chat about your project",
             "If we're a good fit, I'll send you a detailed proposal"
