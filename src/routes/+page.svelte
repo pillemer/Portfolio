@@ -123,9 +123,9 @@
                         {siteContent.home.hero.cta.primary.text}
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
-                    <a href={siteContent.home.hero.cta.secondary.href} class="btn btn-secondary">
+                    <!-- <a href={siteContent.home.hero.cta.secondary.href} class="btn btn-secondary">
                         {siteContent.home.hero.cta.secondary.text}
-                    </a>
+                    </a> -->
                 </div>
             {/if}
         </div>

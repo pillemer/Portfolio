@@ -19,7 +19,7 @@ export const siteContent = {
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
         { href: '/services', label: 'Services' },
-        { href: '/portfolio', label: 'Portfolio' },
+        // { href: '/portfolio', label: 'Portfolio' }, TODO: Uncomment when portfolio is ready
       ],
       cta: {
         label: "Get Started",
@@ -90,7 +90,7 @@ export const siteContent = {
           iconType: "Check",
           iconBgColor: "bg-green-100",
           iconColor: "text-green-600",
-          linkText: "See demo"
+          linkText: "See options"
         },
         {
           title: "Secure Payments",
@@ -98,7 +98,7 @@ export const siteContent = {
           iconType: "Payment",
           iconBgColor: "bg-purple-100",
           iconColor: "text-purple-600",
-          linkText: "Try it out"
+          linkText: "Check it out"
         }
       ]
     },
@@ -134,11 +134,11 @@ export const siteContent = {
       title: "Ready to grow your practice online?",
       description: "Let's build you a professional website that attracts more clients and makes running your practice easier.",
       cta: {
-        primary: {
-          text: "See What I Can Build",
+        secondary: {
+          text: "See Your Options",
           href: "/services"
         },
-        secondary: {
+        primary: {
           text: "Start Your Project",
           href: "/contact"
         }
