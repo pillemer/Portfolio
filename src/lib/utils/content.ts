@@ -39,7 +39,6 @@ export const siteContent = {
       connect: {
         title: "Connect",
         items: [
-          { label: "info@localhost.com", href: "mailto:info@localhost.com" },
           { label: "Get in Touch", href: "/contact" }
         ]
       },

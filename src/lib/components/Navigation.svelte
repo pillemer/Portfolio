@@ -37,6 +37,7 @@
 			
 			<a href={navigation.cta.href} class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-md">
 				{navigation.cta.label}
+			</a>
 		</div>
 	</div>
 </nav>

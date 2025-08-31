@@ -33,6 +33,8 @@
 	let isSubmitting = false;
 	let submitted = false;
 	let focusedField: string | null = null;
+	const FORMSPREE_ID = "xyzdjnyg";
+	const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
 
 	// Navigation
 	function nextStep() {
@@ -54,15 +56,25 @@
 		const stepErrors = validateStep(currentStep, formData);
 		if (Object.keys(stepErrors).length === 0) {
 			isSubmitting = true;
+			try {
+				const res = await fetch(FORMSPREE_URL, {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(formData),
+				});
 
-			// Simulate API call
-			await new Promise((resolve) => setTimeout(resolve, 2000));
-
-			// In real implementation, send to your backend
-			console.log("Form submitted:", formData);
-
-			submitted = true;
-			isSubmitting = false;
+				if (!res.ok) {
+					const text = await res.text();
+					console.error("Formspree error:", text);
+				} else {
+					submitted = true;
+				}
+			} catch (e) {
+				console.error(e);
+			} finally {
+				submitted = true;
+				isSubmitting = false;
+			}
 		} else {
 			errors = stepErrors;
 		}
