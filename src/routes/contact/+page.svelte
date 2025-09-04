@@ -261,122 +261,132 @@
 							{#if currentStep === 0}
 								<!-- Step 1: Basic Info -->
 								<div class="space-y-6">
-									<div
-										class="grid grid-cols-1 md:grid-cols-2 gap-6"
-									>
-										<div>
-											<label
-												for="firstName"
-												class="block text-sm font-medium text-slate-700 mb-2"
-												>First Name</label
-											>
-											<input
-												id="firstName"
-												bind:value={formData.firstName}
-												on:focus={() =>
-													(focusedField =
-														"firstName")}
-												on:blur={() =>
-													(focusedField = null)}
-												type="text"
-												class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 {errors.firstName
-													? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-													: ''}"
-												placeholder="Your first name"
-											/>
-											{#if errors.firstName}
-												<p
-													class="text-red-500 text-sm mt-1"
-												>
-													{errors.firstName}
-												</p>
-											{/if}
-										</div>
-
-										<div>
-											<label
-												for="lastName"
-												class="block text-sm font-medium text-slate-700 mb-2"
-												>Last Name</label
-											>
-											<input
-												id="lastName"
-												bind:value={formData.lastName}
-												on:focus={() =>
-													(focusedField = "lastName")}
-												on:blur={() =>
-													(focusedField = null)}
-												type="text"
-												class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 {errors.lastName
-													? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-													: ''}"
-												placeholder="Your last name"
-											/>
-											{#if errors.lastName}
-												<p
-													class="text-red-500 text-sm mt-1"
-												>
-													{errors.lastName}
-												</p>
-											{/if}
-										</div>
-									</div>
-
-									<label
-										for="email"
-										class="block text-sm font-medium text-slate-700 mb-2"
-										>Email Address</label
-									>
-									<input
-										id="email"
-										bind:value={formData.email}
-										on:focus={() =>
-											(focusedField = "email")}
-										on:blur={() => (focusedField = null)}
-										type="email"
-										class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 {errors.email
-											? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-											: ''}"
-										placeholder="your.email@example.com"
-									/>
-									{#if errors.email}
-										<p class="text-red-500 text-sm mt-1">
-											{errors.email}
-										</p>
-									{/if}
-
-									<div>
-										<label
-											for="phone"
-											class="block text-sm font-medium text-slate-700 mb-2"
+									<fieldset>
+										<legend class="sr-only">Name</legend>
+										<div
+											class="grid grid-cols-1 md:grid-cols-2 gap-6"
 										>
-											Phone Number
-											<span
-												class="text-slate-500 font-normal"
-												>(optional)</span
-											>
-										</label>
-										<input
-											id="phone"
-											bind:value={formData.phone}
-											on:focus={() =>
-												(focusedField = "phone")}
-											on:blur={() =>
-												(focusedField = null)}
-											type="tel"
-											class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 {errors.phone
-												? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-												: ''}"
-											placeholder="07123 456789"
-										/>
-										{#if errors.phone}
-											<p
-												class="text-red-500 text-sm mt-1"
-											>
-												{errors.phone}
-											</p>
-										{/if}
-									</div>
+											<div>
+												<label
+													for="firstName"
+													class="block text-sm font-medium text-slate-700 mb-2"
+													>{content.formLabels.firstName}</label
+												>
+												<input
+													id="firstName"
+													bind:value={formData.firstName}
+													on:focus={() =>
+														(focusedField =
+															"firstName")}
+													on:blur={() =>
+														(focusedField = null)}
+													type="text"
+													class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 {errors.firstName
+														? 'border-red-300 focus:border-red-500 focus:ring-red-100'
+														: ''}"
+													placeholder={content.formPlaceholders.firstName}
+												/>
+												{#if errors.firstName}
+													<p
+														class="text-red-500 text-sm mt-1"
+													>
+														{errors.firstName}
+													</p>
+												{/if}
+											</div>
+
+											<div>
+												<label
+													for="lastName"
+													class="block text-sm font-medium text-slate-700 mb-2"
+													>{content.formLabels.lastName}</label
+												>
+												<input
+													id="lastName"
+													bind:value={formData.lastName}
+													on:focus={() =>
+														(focusedField = "lastName")}
+													on:blur={() =>
+														(focusedField = null)}
+													type="text"
+													class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 {errors.lastName
+														? 'border-red-300 focus:border-red-500 focus:ring-red-100'
+														: ''}"
+													placeholder={content.formPlaceholders.lastName}
+												/>
+												{#if errors.lastName}
+													<p
+														class="text-red-500 text-sm mt-1"
+													>
+														{errors.lastName}
+													</p>
+												{/if}
+											</div>
+										</div>
+									</fieldset>
+
+									<fieldset>
+										<legend class="sr-only">Contact Information</legend>
+										<div class="space-y-6">
+											<div>
+												<label
+													for="email"
+													class="block text-sm font-medium text-slate-700 mb-2"
+													>{content.formLabels.email}</label
+												>
+												<input
+													id="email"
+													bind:value={formData.email}
+													on:focus={() =>
+														(focusedField = "email")}
+													on:blur={() => (focusedField = null)}
+													type="email"
+													class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 {errors.email
+														? 'border-red-300 focus:border-red-500 focus:ring-red-100'
+														: ''}"
+													placeholder={content.formPlaceholders.email}
+												/>
+												{#if errors.email}
+													<p class="text-red-500 text-sm mt-1">
+														{errors.email}
+													</p>
+												{/if}
+											</div>
+
+											<div>
+												<label
+													for="phone"
+													class="block text-sm font-medium text-slate-700 mb-2"
+												>
+													{content.formLabels.phone.label}
+													<span
+														class="text-slate-500 font-normal"
+														>{content.formLabels.phone.optional}</span
+													>
+												</label>
+												<input
+													id="phone"
+													bind:value={formData.phone}
+													on:focus={() =>
+														(focusedField = "phone")}
+													on:blur={() =>
+														(focusedField = null)}
+													type="tel"
+													class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 {errors.phone
+														? 'border-red-300 focus:border-red-500 focus:ring-red-100'
+														: ''}"
+													placeholder={content.formPlaceholders.phone}
+												/>
+												{#if errors.phone}
+													<p
+														class="text-red-500 text-sm mt-1"
+													>
+														{errors.phone}
+													</p>
+												{/if}
+											</div>
+										</div>
+									</fieldset>
 								</div>
 							{:else if currentStep === 1}
 								<!-- Step 2: Practice Details -->
@@ -453,18 +463,17 @@
 										<label
 											for="currentWebsite"
 											class="block text-sm font-medium text-slate-700 mb-2"
-											>Current Website (optional)</label
+											>{content.formLabels.currentWebsite.label}</label
 										>
 										<input
 											id="currentWebsite"
 											bind:value={formData.currentWebsite}
 											type="url"
 											class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200"
-											placeholder="https://your-current-website.com"
+											placeholder={content.formLabels.currentWebsite.placeholder}
 										/>
 										<p class="text-sm text-slate-500 mt-1">
-											If you have an existing website, I'd
-											love to take a look
+											{content.formLabels.currentWebsite.hint}
 										</p>
 									</div>
 								</div>
@@ -545,24 +554,10 @@
 												bind:value={formData.timeline}
 												class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200"
 											>
-												<option value=""
-													>Select timeline</option
-												>
-												<option value="ASAP"
-													>ASAP</option
-												>
-												<option value="Within 1 month"
-													>Within 1 month</option
-												>
-												<option value="1-3 months"
-													>1-3 months</option
-												>
-												<option value="3-6 months"
-													>3-6 months</option
-												>
-												<option value="No rush"
-													>No rush</option
-												>
+												<option value="">{content.formSelects.timeline}</option>
+												{#each content.timelineOptions as timeOption}
+													<option value={timeOption}>{timeOption}</option>
+												{/each}
 											</select>
 											{#if errors.timeline}
 												<p
@@ -623,13 +618,9 @@
 												}
 												class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200"
 											>
-												<option value=""
-													>Select a date</option
-												>
+												<option value="">{content.formSelects.date}</option>
 												{#each availableDates as date}
-													<option value={date.value}
-														>{date.label}</option
-													>
+													<option value={date.value}>{date.label}</option>
 												{/each}
 											</select>
 											{#if errors.preferredDate}
@@ -654,13 +645,9 @@
 												}
 												class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200"
 											>
-												<option value=""
-													>Select a time</option
-												>
+												<option value="">{content.formSelects.time}</option>
 												{#each content.timeSlots as time}
-													<option value={time}
-														>{time}</option
-													>
+													<option value={time}>{time}</option>
 												{/each}
 											</select>
 											{#if errors.preferredTime}
@@ -677,14 +664,14 @@
 										<label
 											for="message"
 											class="block text-sm font-medium text-slate-700 mb-2"
-											>Additional Message (optional)</label
+											>{content.formLabels.message.label}</label
 										>
 										<textarea
 											id="message"
 											bind:value={formData.message}
 											rows="4"
 											class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 resize-none"
-											placeholder="Tell me more about your project, any specific requirements, or questions you have..."
+											placeholder={content.formLabels.message.placeholder}
 										></textarea>
 									</div>
 								</div>

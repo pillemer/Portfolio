@@ -3,9 +3,7 @@
     export let number: string;
     export let title: string;
     export let description: string;
-    export let showConnector = true;
     export let delay = "0.2s";
-    export let mounted = false;
 </script>
 
 <div
@@ -18,11 +16,6 @@
         >
             {number}
         </div>
-        {#if mounted && showConnector}
-            <div
-                class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-slate-200 -translate-y-1/2"
-            ></div>
-        {/if}
     </div>
     <h3 class="heading-3 mb-4">{title}</h3>
     <p class="body">

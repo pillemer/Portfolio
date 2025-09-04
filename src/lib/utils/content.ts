@@ -79,7 +79,7 @@ export const siteContent = {
         {
           title: "Build Trust Instantly",
           description: "Clean, professional design that makes potential clients feel safe and confident about reaching out to you.",
-          iconType: "ArrowRight",
+          iconType: "Trust",
           iconBgColor: "bg-blue-100",
           iconColor: "text-blue-600",
           linkText: "Learn more"
@@ -326,6 +326,13 @@ export const siteContent = {
         '9:00 AM', '10:00 AM', '11:00 AM',
         '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'
     ],
+    timelineOptions: [
+        'ASAP',
+        'Within 1 month',
+        '1-3 months',
+        '3-6 months',
+        'No rush'
+    ],
     summary: {
         title: "Review Your Information",
         sections: {
@@ -363,6 +370,43 @@ export const siteContent = {
             "No pressure - just a friendly chat about your project",
             "If we're a good fit, I'll send you a detailed proposal"
         ]
+    },
+    formLabels: {
+        firstName: "First Name",
+        lastName: "Last Name",
+        email: "Email Address",
+        phone: {
+            label: "Phone Number",
+            optional: "(optional)"
+        },
+        currentWebsite: {
+            label: "Current Website (optional)",
+            hint: "If you have an existing website, I'd love to take a look",
+            placeholder: "https://your-current-website.com"
+        },
+        practiceType: "What type of practice do you run?",
+        practiceStage: "What stage is your practice at?",
+        services: "What services do you need? (Select all that apply)",
+        timeline: "Timeline",
+        budget: "Budget Range",
+        preferredDate: "Preferred Date",
+        preferredTime: "Preferred Time",
+        message: {
+            label: "Additional Message (optional)",
+            placeholder: "Tell me more about your project, any specific requirements, or questions you have..."
+        }
+    },
+    formPlaceholders: {
+        firstName: "Your first name",
+        lastName: "Your last name",
+        email: "your.email@example.com",
+        phone: "07123 456789"
+    },
+    formSelects: {
+        timeline: "Select timeline",
+        budget: "Select budget",
+        date: "Select a date",
+        time: "Select a time"
     }
   }
 };
