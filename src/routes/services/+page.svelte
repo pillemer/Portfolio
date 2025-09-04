@@ -161,7 +161,6 @@
                                     </li>
                                 {/each}
                             </ul>
-                            <a href="/contact" class="btn btn-outline w-full">Add to Package</a>
                         </div>
 
                         <!-- Payment System Add-on -->
@@ -180,7 +179,6 @@
                                     </li>
                                 {/each}
                             </ul>
-                            <a href="/contact" class="btn btn-outline w-full">Add to Package</a>
                         </div>
                     </div>
                 </div>
