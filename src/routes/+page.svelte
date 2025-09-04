@@ -12,6 +12,7 @@
     import ArrowRight from "$lib/assets/icons/ArrowRight.svelte";
     import Check from "$lib/assets/icons/Check.svelte";
     import Payment from "$lib/assets/icons/Payment.svelte";
+    import Trust from "$lib/assets/icons/Trust.svelte";
 
     let mounted = false;
     let heroRef;
@@ -149,7 +150,8 @@
 </section>
 
 <!-- Trust Indicators -->
-<section class="section-sm bg-white">
+<!-- TODO: to be added when testimonials are ready -->
+<!-- <section class="section-sm bg-white">
     <div class="container-custom">
         <div class="fade-in text-center mb-16">
             <p class="text-slate-500 text-sm font-medium mb-8">
@@ -172,7 +174,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Value Propositions -->
 <section class="section bg-slate-50">
@@ -191,7 +193,7 @@
                 <ValueCard
                     title={card.title}
                     description={card.description}
-                    icon={card.iconType === 'ArrowRight' ? ArrowRight : card.iconType === 'Check' ? Check : Payment}
+                    icon={card.iconType === 'Trust' ? Trust : card.iconType === 'Check' ? Check : Payment}
                     iconBgColor={card.iconBgColor}
                     iconColor={card.iconColor}
                     linkText={card.linkText}
