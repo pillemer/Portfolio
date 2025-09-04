@@ -3,16 +3,14 @@
     export let className = "w-8 h-8";
 </script>
 
-<svg
+<svg 
     class={className}
-    fill="none"
     stroke="currentColor"
-    viewBox="0 0 24 24"
+    viewBox="0 0 24 24" 
+    fill="none"
 >
-    <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 9l3 3 8-8"
+    <path 
+        fill="#000000" 
+        d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5L11 16L21 6l-1.41-1.42L11 13.17l-3.09-3.09Z"
     />
 </svg>
