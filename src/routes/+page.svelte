@@ -223,8 +223,6 @@
                     title={step.title}
                     description={step.description}
                     delay={`${0.2 * (i + 1)}s`}
-                    {mounted}
-                    showConnector={i !== siteContent.home.process.steps.length - 1}
                 />
             {/each}
         </div>

@@ -8,7 +8,6 @@ export type FormData = {
     phone: string;
     
     // Step 2: Practice Details
-    practiceType: string;
     practiceStage: string;
     currentWebsite: string;
     
@@ -16,10 +15,6 @@ export type FormData = {
     services: string[];
     timeline: string;
     budget: string;
-    
-    // Step 4: Booking
-    preferredDate: string;
-    preferredTime: string;
     message: string;
 };
 
@@ -47,31 +42,4 @@ export function validateStep(step: number, formData: FormData): StepErrors {
     }
 
     return stepErrors;
-}
-
-export function getAvailableDates(): Array<{ value: string; label: string }> {
-    const dates = [];
-    const today = new Date();
-    let count = 0;
-    let current = new Date(today);
-    
-    while (count < 14) {
-        current.setDate(current.getDate() + 1);
-        const dayOfWeek = current.getDay();
-        
-        // Skip weekends
-        if (dayOfWeek !== 0 && dayOfWeek !== 6) {
-            dates.push({
-                value: current.toISOString().split('T')[0],
-                label: current.toLocaleDateString('en-GB', { 
-                    weekday: 'long', 
-                    month: 'long', 
-                    day: 'numeric' 
-                })
-            });
-            count++;
-        }
-    }
-    
-    return dates;
 }

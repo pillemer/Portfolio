@@ -8,3 +8,4 @@ node_modules
 .vercel
 .output
 vite.config.js.timestamp-*
+meta

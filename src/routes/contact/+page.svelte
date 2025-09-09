@@ -7,7 +7,6 @@
 		type FormData,
 		type StepErrors,
 	} from "$lib/utils/form";
-	import { getAvailableDates } from "$lib/utils/form";
 
 	const content = siteContent.contact;
 
@@ -18,14 +17,11 @@
 		lastName: "",
 		email: "",
 		phone: "",
-		practiceType: "",
 		practiceStage: "",
 		currentWebsite: "",
 		services: [],
 		timeline: "",
 		budget: "",
-		preferredDate: "",
-		preferredTime: "",
 		message: "",
 	};
 
@@ -95,8 +91,6 @@
 			? current.filter((s) => s !== service)
 			: [...current, service];
 	}
-
-	$: availableDates = getAvailableDates();
 </script>
 
 <svelte:head>
@@ -193,9 +187,10 @@
 				>
 					<div
 						class="h-full bg-slate-900 transition-all duration-500 ease-out"
-						style="width: {(currentStep /
-							(content.steps.length - 1)) *
-							100}%"
+						style="width: {currentStep === 0 ? 0 : 
+							/* Calculate progress as segments between steps, not points */
+							`calc(${currentStep / (content.steps.length - 1) * 100}% + ${6 / (content.steps.length - 1)}px)`
+						}"
 					></div>
 				</div>
 
@@ -391,39 +386,6 @@
 							{:else if currentStep === 1}
 								<!-- Step 2: Practice Details -->
 								<div class="space-y-6">
-									<div>
-										<label
-											class="block text-sm font-medium text-slate-700 mb-2"
-											>What type of practice do you run?</label
-										>
-										<div
-											class="grid grid-cols-1 md:grid-cols-2 gap-3"
-										>
-											{#each content.practiceTypes as type}
-												<button
-													type="button"
-													on:click={() =>
-														updateField(
-															"practiceType",
-															type,
-														)}
-													class="p-4 text-left border rounded-xl transition-all duration-200 {formData.practiceType ===
-													type
-														? 'border-blue-500 bg-blue-50 text-blue-900'
-														: 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'}"
-												>
-													{type}
-												</button>
-											{/each}
-										</div>
-										{#if errors.practiceType}
-											<p
-												class="text-red-500 text-sm mt-2"
-											>
-												{errors.practiceType}
-											</p>
-										{/if}
-									</div>
 
 									<div>
 										<label
@@ -598,68 +560,6 @@
 										</div>
 									</div>
 
-									<h4 class="font-medium text-slate-900 mb-4">
-										{content.summary.scheduleCall}
-									</h4>
-
-									<div
-										class="grid grid-cols-1 md:grid-cols-2 gap-6"
-									>
-										<div>
-											<label
-												for="preferredDate"
-												class="block text-sm font-medium text-slate-700 mb-2"
-												>Preferred Date</label
-											>
-											<select
-												id="preferredDate"
-												bind:value={
-													formData.preferredDate
-												}
-												class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200"
-											>
-												<option value="">{content.formSelects.date}</option>
-												{#each availableDates as date}
-													<option value={date.value}>{date.label}</option>
-												{/each}
-											</select>
-											{#if errors.preferredDate}
-												<p
-													class="text-red-500 text-sm mt-1"
-												>
-													{errors.preferredDate}
-												</p>
-											{/if}
-										</div>
-
-										<div>
-											<label
-												for="preferredTime"
-												class="block text-sm font-medium text-slate-700 mb-2"
-												>Preferred Time</label
-											>
-											<select
-												id="preferredTime"
-												bind:value={
-													formData.preferredTime
-												}
-												class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200"
-											>
-												<option value="">{content.formSelects.time}</option>
-												{#each content.timeSlots as time}
-													<option value={time}>{time}</option>
-												{/each}
-											</select>
-											{#if errors.preferredTime}
-												<p
-													class="text-red-500 text-sm mt-1"
-												>
-													{errors.preferredTime}
-												</p>
-											{/if}
-										</div>
-									</div>
-
 									<div>
 										<label
 											for="message"
@@ -723,11 +623,6 @@
 														.practice.title}
 												</h5>
 												<div class="mt-1 space-y-1">
-													<p
-														class="text-sm text-slate-600"
-													>
-														{formData.practiceType}
-													</p>
 													<p
 														class="text-sm text-slate-600"
 													>

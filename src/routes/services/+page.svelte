@@ -133,8 +133,8 @@
                             <div>
                                 <ul class="space-y-4">
                                     {#each siteContent.services.packages.website.features as feature}
-                                        <li class="flex items-start">
-                                            <span class="text-blue-600 mt-1 mr-2"><Check /></span>
+                                        <li class="flex items-center">
+                                            <span class="text-blue-600 mr-2 flex-shrink-0"><Check /></span>
                                             <span>{feature}</span>
                                         </li>
                                     {/each}
@@ -155,8 +155,8 @@
                             </div>
                             <ul class="space-y-4 mb-8">
                                 {#each siteContent.services.packages.bookingSystem.features as feature}
-                                    <li class="flex items-start">
-                                        <span class="text-blue-600 mt-1 mr-2"><Check /></span>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2 flex-shrink-0"><Check /></span>
                                         <span>{feature}</span>
                                     </li>
                                 {/each}
@@ -173,8 +173,8 @@
                             </div>
                             <ul class="space-y-4 mb-8">
                                 {#each siteContent.services.packages.paymentSystem.features as feature}
-                                    <li class="flex items-start">
-                                        <span class="text-blue-600 mt-1 mr-2"><Check /></span>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2 flex-shrink-0"><Check /></span>
                                         <span>{feature}</span>
                                     </li>
                                 {/each}

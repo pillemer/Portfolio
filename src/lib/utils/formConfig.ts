@@ -6,17 +6,12 @@ export const formSteps = [
     },
     {
         id: 'practice',
-        requiredFields: ['practiceType', 'practiceStage'],
+        requiredFields: ['practiceStage'],
         optionalFields: ['currentWebsite']
     },
     {
         id: 'project',
         requiredFields: ['services', 'timeline', 'budget'],
-        optionalFields: []
-    },
-    {
-        id: 'booking',
-        requiredFields: ['preferredDate', 'preferredTime'],
         optionalFields: ['message']
     }
 ];

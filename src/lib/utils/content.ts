@@ -1,7 +1,7 @@
 export const siteContent = {
   global: {
     siteName: "Ariel Pillemer",
-    siteDescription: "Professional website design for healthcare professionals in the UK",
+    siteDescription: "Beautiful, calming websites for therapists in the UK",
     error: {
       title: "404 - Page Not Found",
       description: "The page you're looking for doesn't exist.",
@@ -22,7 +22,7 @@ export const siteContent = {
         // { href: '/portfolio', label: 'Portfolio' }, TODO: Uncomment when portfolio is ready
       ],
       cta: {
-        label: "Get Started",
+        label: "Let's talk",
         href: "/contact"
       }
     },
@@ -48,23 +48,23 @@ export const siteContent = {
   
   home: {
     hero: {
-      badge: "Professional Website Design",
-      title: "Beautiful websites that help",
-      titleHighlight: "professionals grow",
-      description: "Clean, professional websites with integrated booking systems and online payments. Designed specifically for professionals who want to attract more clients.",
+      badge: "Websites for UK Therapists",
+      title: "Your website should feel as welcoming as",
+      titleHighlight: "your therapy room",
+      description: "Creating a safe, calming space is what you do best. But when it comes to websites, the tech side can feel overwhelming. I get it, and I'm here to help. Let me handle the design and technical stuff so your website actually reflects the warmth and professionalism of your practice.",
       cta: {
         primary: {
-          text: "See What I Can Build",
-          href: "/services"
+          text: "Let's chat about your website",
+          href: "/contact"
         },
         secondary: {
-          text: "View Examples",
-          href: "/portfolio"
+          text: "See how I can help",
+          href: "/services"
         }
       }
     },
     trust: {
-      title: "TRUSTED BY MANY PROFESSIONALS",
+      title: "TRUSTED BY THERAPISTS ACROSS THE UK",
       badges: [
         { text: "BACP" },
         { text: "BPS" },
@@ -73,73 +73,73 @@ export const siteContent = {
       ]
     },
     valueProps: {
-      title: "Everything your practice needs online",
-      description: "From professional design to booking systems, I build websites that help therapists focus on what matters most - helping their clients.",
+      title: "What you'll get",
+      description: "I specialize in creating websites specifically for therapists. Your site will reflect the same warmth and professionalism as your in-person sessions.",
       cards: [
         {
-          title: "Build Trust Instantly",
-          description: "Clean, professional design that makes potential clients feel safe and confident about reaching out to you.",
+          title: "A website that actually feels like you",
+          description: "No more generic templates. Your site will reflect your personality and approach, so potential clients get a real sense of who you are before they even pick up the phone.",
           iconType: "Trust",
           iconBgColor: "bg-blue-100",
           iconColor: "text-blue-600",
           linkText: "Learn more"
         },
         {
-          title: "Simple Booking",
-          description: "Integrated booking system that lets clients schedule appointments 24/7, reducing phone calls and admin work.",
+          title: "More time for what matters",
+          description: "Stop spending your evenings trying to figure out website stuff. I'll set everything up and show you a simple way to make updates. You'll get your weekends back.",
           iconType: "Check",
           iconBgColor: "bg-green-100",
           iconColor: "text-green-600",
-          linkText: "See options"
+          linkText: "See how"
         },
         {
-          title: "Secure Payments",
-          description: "Accept payments online with secure, GDPR-compliant payment processing. Get paid faster, reduce no-shows.",
+          title: "That professional first impression",
+          description: "Every detail, from the colors to the layout to the words, will help new visitors feel comfortable and build trust from the moment they land on your site.",
           iconType: "Payment",
           iconBgColor: "bg-purple-100",
           iconColor: "text-purple-600",
-          linkText: "Check it out"
+          linkText: "See features"
         }
       ]
     },
     process: {
-      title: "Simple process, professional results",
-      description: "From initial consultation to launch, I handle everything so you can focus on your practice.",
+      title: "Here's how we'll work together",
+      description: "From our first chat to launch, I'll guide you through everything so you can focus on your practice.",
       steps: [
         {
           number: "1",
           title: "Discovery Call",
-          description: "We discuss your practice, goals, and what you need from your website. I'll show you examples and explain the process."
+          description: "We'll have a relaxed conversation about your practice and what you want people to feel when they visit your site. I'll show you examples and explain how everything works."
         },
         {
           number: "2",
           title: "Design & Build",
-          description: "I create your website with your content, branding, and functionality. You'll see progress updates throughout the process."
+          description: "I'll create your website with your content, photos, and personality in mind. You'll see updates along the way and can give feedback as we go."
         },
         {
           number: "3",
           title: "Launch & Support",
-          description: "Your website goes live with full training on how to manage bookings and content. Ongoing support included."
+          description: "Your website goes live with full training on making simple updates. I'm always here if you need help with anything."
         }
       ]
     },
     stats: {
       items: [
         { value: "5+", label: "Years Experience" },
-        { value: "100%", label: "Client Satisfaction" },
-        { value: "24h", label: "Average Response" }
+        { value: "100%", label: "Happy Clients" },
+        { value: "24h", label: "Response Time" }
       ]
     },
     finalCta: {
-      title: "Ready to grow your practice online?",
-      description: "Let's build you a professional website that attracts more clients and makes running your practice easier.",
+      title: "Ready to get started?",
+      description: "Your new website is just a conversation away. Let's set up a quick call to chat about your practice and what you'd like your website to do for you.",
       cta: {
         secondary: {
           text: "See Your Options",
           href: "/services"
         },
         primary: {
-          text: "Start Your Project",
+          text: "Let's talk",
           href: "/contact"
         }
       }
@@ -147,117 +147,148 @@ export const siteContent = {
   },
   
   about: {
+    meta: {
+      title: "About Me | Ariel Pillemer",
+      description: "I specialize in creating beautiful, functional websites that help therapists showcase their practice and connect with more clients."
+    },
     hero: {
       badge: "About Me",
-      title: "Helping Healthcare Professionals",
+      title: "Helping Therapists",
       titleHighlight: "Thrive Online",
-      description: "I specialize in creating beautiful, functional websites that help healthcare professionals showcase their practice and connect with more clients.",
+      description: "I specialize in creating beautiful, functional websites that help therapists showcase their practice and connect with more clients.",
     },
     sections: {
       approach: {
         title: "My Approach",
         content: [
-          "With a deep understanding of the healthcare sector's unique needs, I create websites that prioritize professionalism, accessibility, and user experience. My goal is to help professionals establish a strong online presence while making it easy for potential clients to learn about their services and get in touch.",
-          "Every website I build is tailored to the specific needs of healthcare professionals, incorporating essential features like secure contact forms, appointment scheduling, and HIPAA-compliant communication channels.",
-        ],
+          "I understand that therapists need more than just a website, you need a digital space that feels as welcoming and professional as your therapy room. That's why I focus on creating sites that prioritize warmth, accessibility, and that all-important first impression.",
+          "Every website I build includes the essentials therapists need: secure contact forms, easy appointment scheduling, and GDPR-compliant systems. But more importantly, each site is designed to help potential clients feel comfortable and confident about reaching out.",
+        ]
       },
+      expertise: {
+        title: "What I Can Help You With",
+        services: [
+          {
+            title: "Custom Website Design",
+            description: "Websites that reflect your personality and approach, not generic templates"
+          },
+          {
+            title: "Booking & Payments",
+            description: "Simple systems that make it easy for clients to book and pay online"
+          },
+          {
+            title: "Local SEO",
+            description: "Help people in your area find you when they're looking for therapy"
+          },
+          {
+            title: "Ongoing Support",
+            description: "I'm here whenever you need updates, have questions, or want to add something new"
+          }
+        ]
+      },
+      why: {
+        title: "Why Work With Me",
+        content: [
+          "I get it. you didn't train to become a therapist so you could spend your evenings wrestling with websites. You want to focus on your clients, not figure out technical stuff. That's exactly why I built this service.",
+          "Whether you're just starting out or you've been in practice for years, I'll help you create a website that actually works for your business and feels authentically you."
+        ]
+      }
     },
   },
   
   services: {
     hero: {
       badge: "Professional Services",
-      title: "Transform Your Practice with a",
-      titleHighlight: "Professional Website",
-      description: "From custom website design to complete practice management solutions, I help healthcare professionals establish a strong online presence.",
+      title: "Let's build you a website that",
+      titleHighlight: "actually feels like you",
+      description: "From custom website design to booking systems, I help therapists create an online presence that reflects the warmth and professionalism of their practice.",
     },
     
     packages: {
       website: {
-        title: "Professional Website",
-        description: "Everything you need to establish your online presence",
-        price: "£1,499",
-        priceDetail: "one-time + optional maintenance",
+        title: "Essential Practice Website",
+        description: "Perfect for therapists who want a professional online presence",
+        price: "£1,299",
+        priceDetail: "one-time + optional £20/mo maintenance",
         features: [
-          "Custom professional website design",
-          "Mobile responsive layout",
-          "Search engine optimization (SEO)",
-          "Contact form integration",
-          "Social media integration",
-          "Regular updates and maintenance",
-          "Analytics and performance tracking",
-          "Secure hosting setup",
-          "Training on website management",
+          "5-page custom website that feels like you",
+          "Mobile-friendly, calming design",
+          "Help people find you online (SEO basics)",
+          "Secure contact forms (GDPR compliant)",
+          "All the legal stuff sorted (privacy policy, cookies)",
+          "Professional email setup",
+          "Reliable, secure hosting",
+          "Ready in 3-4 weeks",
         ],
       },
       
       bookingSystem: {
-        title: "Booking System Add-on",
-        description: "Streamline your appointment management",
+        title: "Online Booking Add-on",
+        description: "Let clients book appointments 24/7",
         price: "£499",
-        priceDetail: "one-time + monthly fee",
+        priceDetail: "one-time",
         features: [
-          "Online booking system integration",
-          "Automated email confirmations",
-          "Calendar synchronization",
-          "Client reminder system",
-          "Customizable booking rules",
-          "Multiple practitioner support",
-          "Appointment history tracking",
-          "Client management system",
+          "Online booking that works on all devices",
+          "Automatic confirmation emails",
+          "Syncs with your calendar",
+          "Reminder emails for clients",
+          "Set your own availability rules",
+          "Works for multiple therapists",
+          "Keep track of appointment history",
+          "Simple client management",
         ],
       },
       
       paymentSystem: {
         title: "Payment System Add-on",
-        description: "Simplify your payment processing",
+        description: "Get paid easily and securely",
         price: "£399",
-        priceDetail: "one-time + processing fees",
+        priceDetail: "one-time",
         features: [
           "Secure payment processing",
-          "Multiple payment methods",
-          "Automated invoicing",
-          "Payment tracking",
-          "Recurring payment setup",
-          "Deposit handling",
-          "Financial reporting",
-          "Direct bank integration",
+          "All major UK payment methods",
+          "Automatic invoicing (VAT ready)",
+          "Track all your payments",
+          "Set up recurring payments",
+          "Handle deposits easily",
+          "Simple financial reports",
+          "Works with UK banks",
         ],
       },
     },
     
     process: {
-      title: "How We'll Work Together",
-      description: "A streamlined process to bring your vision to life, with clear communication every step of the way.",
+      title: "Here's how we'll work together",
+      description: "A straightforward process with clear communication every step of the way.",
       steps: [
         {
           number: "1",
           title: "Discovery & Planning",
-          description: "We'll start with a detailed consultation to understand your practice, goals, and specific needs. You'll receive a comprehensive project plan and timeline.",
+          description: "We'll start with a relaxed chat about your practice, what you need, and what you want people to feel when they visit your site. You'll get a clear plan and timeline.",
         },
         {
           number: "2",
           title: "Design & Development",
-          description: "I'll create a custom design that reflects your professional brand, then build it using modern, reliable technology that's easy to maintain.",
+          description: "I'll create a design that feels authentically you, then build it using reliable, modern technology that won't give you headaches later.",
         },
         {
           number: "3",
-          title: "Integration & Testing",
-          description: "All features will be thoroughly tested, including appointment booking, payments, and contact forms. We'll make sure everything works perfectly.",
+          title: "Testing & Tweaking",
+          description: "I'll test everything thoroughly, booking systems, contact forms, payments, and make sure it all works perfectly on phones, tablets, and computers.",
         },
         {
           number: "4",
-          title: "Launch & Support",
-          description: "After final approval, your site goes live with my full support. I'll provide training on how to manage your new website and be available for ongoing assistance.",
+          title: "Launch & Training",
+          description: "Once you're happy with everything, your site goes live. I'll show you how to manage it yourself and be available whenever you need help.",
         },
       ],
     },
     
     cta: {
-      title: "Ready to Get Started?",
-      description: "Let's discuss how I can help you create a professional online presence that grows your practice and supports your clients.",
-      buttonText: "Schedule a Consultation",
-    },
+      title: "Ready to get started?",
+      description: "Let's create a website that reflects your practice and helps the right clients find you.",
+      buttonText: "Let's talk about your website",
+    }
   },
   
   contact: {
@@ -266,18 +297,18 @@ export const siteContent = {
         description: "Get in touch to discuss your therapist website project. Free discovery call to understand your needs and show you what's possible."
     },
     header: {
-        title: "Let's build something amazing",
-        subtitle: "Tell me about your practice and let's schedule a discovery call to discuss your perfect website."
+        title: "Let's chat about your website",
+        subtitle: "Tell me about your practice and we'll set up a time to talk about what you need."
     },
     steps: [
         {
-            title: "Tell me about you",
+            title: "About you",
             subtitle: "Let's start with the basics",
             icon: "👋"
         },
         {
             title: "Your practice",
-            subtitle: "Help me understand your needs",
+            subtitle: "Help me understand what you need",
             icon: "🏥"
         },
         {
@@ -286,10 +317,10 @@ export const siteContent = {
             icon: "💡"
         },
         {
-            title: "Book discovery call",
-            subtitle: "Let's schedule a time to chat",
-            icon: "�"
-        },
+          title: 'Summary',
+          subtitle: "Review your information",
+          icon: "📋"
+        }
     ],
     practiceTypes: [
         'Individual Therapy',
@@ -317,14 +348,10 @@ export const siteContent = {
         'Ongoing Maintenance'
     ],
     budgetRanges: [
+        '£1,000 - £2,000',
         '£2,000 - £3,000',
         '£3,000 - £5,000',
-        '£5,000 - £8,000',
-        '£8,000+'
-    ],
-    timeSlots: [
-        '9:00 AM', '10:00 AM', '11:00 AM',
-        '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'
+        '£5,000+'
     ],
     timelineOptions: [
         'ASAP',
@@ -351,12 +378,11 @@ export const siteContent = {
             message: {
                 title: "Additional Message"
             }
-        },
-        scheduleCall: "Schedule Your Discovery Call"
+        }
     },
     successMessage: {
-        title: "Thank you!",
-        message: "I've received your information and will email you within 24 hours to schedule our discovery call.",
+        title: "Thanks!",
+        message: "I've got your details and will email you within 24 hours to set up our chat.",
         features: [
             "Response within 24 hours",
             "Free 30-minute discovery call"
@@ -365,9 +391,9 @@ export const siteContent = {
     nextSteps: {
         title: "What happens next?",
         steps: [
-            "30-minute discovery call",
-            "I'll show you examples and discuss your needs",
-            "No pressure - just a friendly chat about your project",
+            "We'll have a 30-minute chat about your practice",
+            "I'll show you examples and discuss what you need",
+            "No pressure, just a friendly conversation about your project",
             "If we're a good fit, I'll send you a detailed proposal"
         ]
     },
@@ -386,13 +412,11 @@ export const siteContent = {
         },
         practiceType: "What type of practice do you run?",
         practiceStage: "What stage is your practice at?",
-        services: "What services do you need? (Select all that apply)",
+        services: "What do you need help with? (Select all that apply)",
         timeline: "Timeline",
         budget: "Budget Range",
-        preferredDate: "Preferred Date",
-        preferredTime: "Preferred Time",
         message: {
-            label: "Additional Message (optional)",
+            label: "Anything else you'd like me to know? (optional)",
             placeholder: "Tell me more about your project, any specific requirements, or questions you have..."
         }
     },
@@ -404,9 +428,7 @@ export const siteContent = {
     },
     formSelects: {
         timeline: "Select timeline",
-        budget: "Select budget",
-        date: "Select a date",
-        time: "Select a time"
+        budget: "Select budget"
     }
   }
 };
