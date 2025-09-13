@@ -187,10 +187,9 @@
 				>
 					<div
 						class="h-full bg-slate-900 transition-all duration-500 ease-out"
-						style="width: {currentStep === 0 ? 0 : 
-							/* Calculate progress as segments between steps, not points */
-							`calc(${currentStep / (content.steps.length - 1) * 100}% + ${6 / (content.steps.length - 1)}px)`
-						}"
+						style="width: {(currentStep /
+							(content.steps.length - 1)) *
+							100}%"
 					></div>
 				</div>
 
