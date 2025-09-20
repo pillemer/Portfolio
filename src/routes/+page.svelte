@@ -21,7 +21,7 @@
     let processRef;
 
     // Set up intersection observer for scroll animations
-    useIntersectionObserver({ removeOnExit: true });
+    useIntersectionObserver();
 
     onMount(() => {
         mounted = true;
@@ -166,7 +166,7 @@
                     iconBgColor={card.iconBgColor}
                     iconColor={card.iconColor}
                     linkText={card.linkText}
-                    delay={`${0.2 * (i + 1)}s`}
+                    delay={i === 0 ? 'short' : i === 1 ? 'medium' : 'long'}
                 />
             {/each}
         </div>
@@ -191,7 +191,7 @@
                     number={step.number}
                     title={step.title}
                     description={step.description}
-                    delay={`${0.2 * (i + 1)}s`}
+                    delay={i === 0 ? 'short' : i === 1 ? 'medium' : 'long'}
                 />
             {/each}
         </div>
@@ -203,7 +203,7 @@
     <div class="container-custom">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             {#each siteContent.home.stats.items as stat, i}
-                <div class="fade-in" style={i > 0 ? `animation-delay: ${i * 0.2}s` : ''}>
+                <div class="fade-in" style={i === 0 ? 'animation-delay: 0ms' : i === 1 ? 'animation-delay: 200ms' : 'animation-delay: 400ms'}>
                     <div class="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
                     <div class="text-blue-100">{stat.label}</div>
                 </div>

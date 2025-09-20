@@ -12,7 +12,7 @@ export function useIntersectionObserver(
     const {
         threshold = 0.1,
         rootMargin = "-50px 0px -50px 0px",
-        removeOnExit = false
+        removeOnExit = true  // Changed default to true
     } = options;
 
     let observer: IntersectionObserver | undefined;

@@ -1,14 +1,16 @@
 <!-- Process Step component -->
 <script lang="ts">
+    import { ANIMATION_DELAYS } from '$lib/utils/animations';
+    
     export let number: string;
     export let title: string;
     export let description: string;
-    export let delay = "0.2s";
+    export let delay: keyof typeof ANIMATION_DELAYS = "short";
 </script>
 
 <div
     class="slide-in-left text-center"
-    style="animation-delay: {delay};"
+    style="animation-delay: {ANIMATION_DELAYS[delay]};"
 >
     <div class="relative">
         <div

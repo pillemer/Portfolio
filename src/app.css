@@ -56,7 +56,9 @@
   
   /* Animation Components */
   .fade-in {
-    @apply opacity-0 translate-y-5 transition-all duration-500;
+    @apply opacity-0 translate-y-2 transition-all;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .fade-in.visible {
@@ -64,7 +66,9 @@
   }
   
   .slide-in-left {
-    @apply opacity-0 -translate-x-8 transition-all duration-500;
+    @apply opacity-0 -translate-x-4 transition-all;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .slide-in-left.visible {
@@ -72,7 +76,9 @@
   }
   
   .slide-in-right {
-    @apply opacity-0 translate-x-8 transition-all duration-500;
+    @apply opacity-0 translate-x-4 transition-all;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .slide-in-right.visible {

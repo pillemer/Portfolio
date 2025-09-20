@@ -1,6 +1,7 @@
 <!-- Card component -->
 <script lang="ts">
     import type { ComponentType } from 'svelte';
+    import { ANIMATION_DELAYS } from '$lib/utils/animations';
     
     export let title: string;
     export let description: string;
@@ -9,12 +10,12 @@
     export let iconColor = "text-blue-600";
     export let linkText = "Learn more";
     export let linkHref = "/services";
-    export let delay = "0.2s";
+    export let delay: keyof typeof ANIMATION_DELAYS = "short";
 </script>
 
 <div
     class="fade-in card card-hover text-center"
-    style="animation-delay: {delay};"
+    style="animation-delay: {ANIMATION_DELAYS[delay]};"
 >
     <div
         class="w-16 h-16 {iconBgColor} rounded-xl flex items-center justify-center mx-auto mb-6"
