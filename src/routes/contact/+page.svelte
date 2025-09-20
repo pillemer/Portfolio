@@ -735,10 +735,6 @@
 						<span>Back</span>
 					</button>
 
-					<div class="text-sm text-slate-500 font-medium">
-						Step {currentStep + 1} of {content.steps.length}
-					</div>
-
 					{#if currentStep === content.steps.length - 1}
 						<button
 							on:click={handleSubmit}

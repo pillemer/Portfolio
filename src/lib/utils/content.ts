@@ -14,7 +14,7 @@ export const siteContent = {
       }
     },
     navigation: {
-      logo: "Ariel Pillemer",
+      logo: "AP Forge",
       items: [
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
@@ -42,7 +42,7 @@ export const siteContent = {
           { label: "Get in Touch", href: "/contact" }
         ]
       },
-      copyright: "© 2024 Ariel Pillemer. All rights reserved."
+      copyright: "© 2024 AP Forge. All rights reserved."
     },
   },
   
