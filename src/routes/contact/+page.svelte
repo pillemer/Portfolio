@@ -386,41 +386,38 @@
 								<!-- Step 2: Practice Details -->
 								<div class="space-y-6">
 
-									<div>
-										<label
-											class="block text-sm font-medium text-slate-700 mb-2"
-											>What stage is your practice at?</label
-										>
-										<div
-											class="grid grid-cols-1 md:grid-cols-2 gap-3"
-										>
-											{#each content.practiceStages as stage}
-												<button
-													type="button"
-													on:click={() =>
-														updateField(
-															"practiceStage",
-															stage,
-														)}
-													class="p-4 text-left border rounded-xl transition-all duration-200 {formData.practiceStage ===
-													stage
-														? 'border-blue-500 bg-blue-50 text-blue-900'
-														: 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'}"
-												>
-													{stage}
-												</button>
-											{/each}
-										</div>
-										{#if errors.practiceStage}
-											<p
-												class="text-red-500 text-sm mt-2"
+								<fieldset>
+									<legend class="block text-sm font-medium text-slate-700 mb-2">
+										What stage is your practice at?
+									</legend>
+									<div
+										class="grid grid-cols-1 md:grid-cols-2 gap-3"
+									>
+										{#each content.practiceStages as stage}
+											<button
+												type="button"
+												on:click={() =>
+													updateField(
+														"practiceStage",
+														stage,
+													)}
+												class="p-4 text-left border rounded-xl transition-all duration-200 {formData.practiceStage ===
+												stage
+													? 'border-blue-500 bg-blue-50 text-blue-900'
+													: 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'}"
 											>
-												{errors.practiceStage}
-											</p>
-										{/if}
+												{stage}
+											</button>
+										{/each}
 									</div>
-
-									<div>
+									{#if errors.practiceStage}
+										<p
+											class="text-red-500 text-sm mt-2"
+										>
+											{errors.practiceStage}
+										</p>
+									{/if}
+								</fieldset>									<div>
 										<label
 											for="currentWebsite"
 											class="block text-sm font-medium text-slate-700 mb-2"
@@ -443,7 +440,7 @@
 								<div class="space-y-6">
 									<fieldset class="space-y-6">
 										<legend
-											class="block text-sm font-medium text-slate-700 mb-3"
+											class="block text-sm font-medium text-slate-700 mb-2"
 										>
 											What services do you need? (Select
 											all that apply)
