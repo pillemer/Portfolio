@@ -4,6 +4,7 @@
     import { useIntersectionObserver } from "$lib/utils/intersectionObserver";
     import PageWrapper from "$lib/components/PageWrapper.svelte";
     import HeroSection from "$lib/components/HeroSection.svelte";
+    import SectionHeader from "$lib/components/SectionHeader.svelte";
     import ProcessStep from "$lib/components/ProcessStep.svelte";
     import Check from "$lib/assets/icons/Check.svelte";
     import { siteContent } from "$lib/utils/content";
@@ -36,13 +37,10 @@
     <section class="py-24 bg-white">
         <div class="container-custom">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="heading-2 mb-4">Choose Your Solution</h2>
-                    <p class="body-large text-slate-600 max-w-2xl mx-auto">
-                        Select the package that best fits your needs, or contact me for a custom solution 
-                        tailored to your practice.
-                    </p>
-                </div>
+                <SectionHeader 
+                    title="Choose Your Solution"
+                    description="Select the package that best fits your needs, or contact me for a custom solution tailored to your practice."
+                />
 
                 <!-- Service Packages -->
                 <div class="grid grid-cols-1 gap-8">
@@ -118,12 +116,10 @@
     <section class="py-24 bg-slate-50">
         <div class="container-custom">
             <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="heading-2 mb-4">{siteContent.services.process.title}</h2>
-                    <p class="body-large text-slate-600 max-w-2xl mx-auto">
-                        {siteContent.services.process.description}
-                    </p>
-                </div>
+                <SectionHeader 
+                    title={siteContent.services.process.title}
+                    description={siteContent.services.process.description}
+                />
 
                 <div class="space-y-12">
                     {#each siteContent.services.process.steps as step}
@@ -142,10 +138,11 @@
     <section class="py-24 bg-white">
         <div class="container-custom">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="heading-2 mb-6">{siteContent.services.cta.title}</h2>
-                <p class="body-large text-slate-600 mb-8 max-w-2xl mx-auto">
-                    {siteContent.services.cta.description}
-                </p>
+                <SectionHeader 
+                    title={siteContent.services.cta.title}
+                    description={siteContent.services.cta.description}
+                    maxWidth="max-w-2xl"
+                />
                 <a href="/contact" class="btn btn-primary">{siteContent.services.cta.buttonText}</a>
             </div>
         </div>

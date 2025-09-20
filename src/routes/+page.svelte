@@ -7,6 +7,7 @@
     // Components
     import PageWrapper from "$lib/components/PageWrapper.svelte";
     import HeroSection from "$lib/components/HeroSection.svelte";
+    import SectionHeader from "$lib/components/SectionHeader.svelte";
     import ValueCard from "$lib/components/ValueCard.svelte";
     import ProcessStep from "$lib/components/ProcessStep.svelte";
     
@@ -83,14 +84,10 @@
 <!-- Value Propositions -->
 <section class="section bg-slate-50">
     <div class="container-custom">
-        <div class="text-center mb-16">
-            <h2 class="slide-in-left heading-2 mb-4">
-                {siteContent.home.valueProps.title}
-            </h2>
-            <p class="slide-in-right body-large max-w-2xl mx-auto">
-                {siteContent.home.valueProps.description}
-            </p>
-        </div>
+        <SectionHeader 
+            title={siteContent.home.valueProps.title}
+            description={siteContent.home.valueProps.description}
+        />
 
         <div class="grid md:grid-cols-3 gap-8">
             {#each siteContent.home.valueProps.cards as card, i}
@@ -111,14 +108,10 @@
 <!-- Process Section -->
 <section class="section bg-white" bind:this={processRef}>
     <div class="container-custom">
-        <div class="text-center mb-16">
-            <h2 class="slide-in-left heading-2 mb-4">
-                {siteContent.home.process.title}
-            </h2>
-            <p class="slide-in-right body-large max-w-2xl mx-auto">
-                {siteContent.home.process.description}
-            </p>
-        </div>
+        <SectionHeader 
+            title={siteContent.home.process.title}
+            description={siteContent.home.process.description}
+        />
 
         <div class="grid md:grid-cols-3 gap-12">
             {#each siteContent.home.process.steps as step, i}
@@ -151,12 +144,12 @@
 <section class="section bg-slate-50">
     <div class="container-custom text-center">
         <div class="max-w-3xl mx-auto">
-            <h2 class="fade-in heading-2 mb-6">
-                {siteContent.home.finalCta.title}
-            </h2>
-            <p class="fade-in body-large mb-8">
-                {siteContent.home.finalCta.description}
-            </p>
+            <SectionHeader 
+                title={siteContent.home.finalCta.title}
+                description={siteContent.home.finalCta.description}
+                titleClass="fade-in"
+                descriptionClass="fade-in"
+            />
             <div class="fade-in flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={siteContent.home.finalCta.cta.primary.href} class="btn btn-primary">
                     {siteContent.home.finalCta.cta.primary.text}
