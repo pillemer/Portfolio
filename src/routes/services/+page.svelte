@@ -3,6 +3,7 @@
     import { fade, fly } from "svelte/transition";
     import { useIntersectionObserver } from "$lib/utils/intersectionObserver";
     import PageWrapper from "$lib/components/PageWrapper.svelte";
+    import HeroSection from "$lib/components/HeroSection.svelte";
     import ProcessStep from "$lib/components/ProcessStep.svelte";
     import Check from "$lib/assets/icons/Check.svelte";
     import { siteContent } from "$lib/utils/content";
@@ -22,61 +23,14 @@
     description="Professional website design, booking systems, and payment integration for therapists and healthcare professionals."
 >
     <!-- Hero Section -->
-    <section
-        class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100"
-    >
-        <!-- Subtle Background Pattern -->
-        <div class="absolute inset-0 opacity-[0.02]">
-            <div
-                class="absolute inset-0"
-                style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px); background-size: 24px 24px;"
-            ></div>
-        </div>
-
-        <!-- Hero Content -->
-        <div class="container-custom relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                {#if mounted}
-                    <div in:fly={{ y: 30, duration: 800, delay: 200 }} class="mb-6">
-                        <span
-                            class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                        >
-                            {siteContent.services.hero.badge}
-                        </span>
-                    </div>
-
-                    <h1
-                        in:fly={{ y: 30, duration: 800, delay: 400 }}
-                        class="heading-1 mb-6"
-                    >
-                        {siteContent.services.hero.title}
-                        <span class="text-blue-600 relative">
-                            {siteContent.services.hero.titleHighlight}
-                            <svg
-                                class="absolute -bottom-2 left-0 w-full h-3 text-blue-200"
-                                viewBox="0 0 200 12"
-                                fill="none"
-                            >
-                                <path
-                                    d="M1 5C1 5 47.5 -2.5 100 5C152.5 12.5 199 5 199 5"
-                                    stroke="currentColor"
-                                    stroke-width="4"
-                                    stroke-linecap="round"
-                                />
-                            </svg>
-                        </span>
-                    </h1>
-
-                    <p
-                        in:fly={{ y: 30, duration: 800, delay: 600 }}
-                        class="body-large text-slate-600 mb-8 max-w-2xl mx-auto"
-                    >
-                        {siteContent.services.hero.description}
-                    </p>
-                {/if}
-            </div>
-        </div>
-    </section>
+    <HeroSection
+        badge={siteContent.services.hero.badge}
+        title={siteContent.services.hero.title}
+        titleHighlight={siteContent.services.hero.titleHighlight}
+        description={siteContent.services.hero.description}
+        showFloatingElements={false}
+        minHeight="min-h-[60vh]"
+    />
 
     <!-- Services Grid -->
     <section class="py-24 bg-white">
