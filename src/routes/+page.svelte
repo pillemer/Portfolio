@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { fade, fly } from "svelte/transition";
     import { siteContent } from "$lib/utils/content";
+    import { useIntersectionObserver } from "$lib/utils/intersectionObserver";
     
     // Components
     import PageWrapper from "$lib/components/PageWrapper.svelte";
@@ -19,43 +20,11 @@
     let statsRef;
     let processRef;
 
-    // Intersection Observer for animations
-    let intersectionObserver: IntersectionObserver;
+    // Set up intersection observer for scroll animations
+    useIntersectionObserver({ removeOnExit: true });
 
     onMount(() => {
         mounted = true;
-
-        // Set up intersection observer for scroll animations
-        intersectionObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    // Add visible class when entering viewport
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    } else {
-                        // Remove visible class when leaving viewport
-                        entry.target.classList.remove("visible");
-                    }
-                });
-            },
-            { 
-                threshold: 0.1,
-                rootMargin: "-50px 0px -50px 0px" // Adjusted to trigger slightly earlier
-            },
-        );
-
-        // Observe elements
-        document
-            .querySelectorAll(".fade-in, .slide-in-left, .slide-in-right")
-            .forEach((el) => {
-                intersectionObserver.observe(el);
-            });
-
-        return () => {
-            if (intersectionObserver) {
-                intersectionObserver.disconnect();
-            }
-        };
     });
 </script>
 

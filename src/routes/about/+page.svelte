@@ -2,41 +2,16 @@
     import { onMount } from "svelte";
     import { fade, fly } from "svelte/transition";
     import { siteContent } from "$lib/utils/content";
+    import { useIntersectionObserver } from "$lib/utils/intersectionObserver";
     import PageWrapper from "$lib/components/PageWrapper.svelte";
 
-    let mounted = false;    // Intersection Observer for animations
-    let intersectionObserver: IntersectionObserver;
+    let mounted = false;
+    
+    // Set up intersection observer for scroll animations
+    useIntersectionObserver();
 
     onMount(() => {
         mounted = true;
-
-        // Set up intersection observer for scroll animations
-        intersectionObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            },
-            { 
-                threshold: 0.1,
-                rootMargin: "-50px 0px -50px 0px"
-            },
-        );
-
-        // Observe elements
-        document
-            .querySelectorAll(".fade-in, .slide-in-left, .slide-in-right")
-            .forEach((el) => {
-                intersectionObserver.observe(el);
-            });
-
-        return () => {
-            if (intersectionObserver) {
-                intersectionObserver.disconnect();
-            }
-        };
     });
 </script>
 

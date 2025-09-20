@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { fade, fly } from "svelte/transition";
+    import { useIntersectionObserver } from "$lib/utils/intersectionObserver";
     import PageWrapper from "$lib/components/PageWrapper.svelte";
     import ProcessStep from "$lib/components/ProcessStep.svelte";
     import Check from "$lib/assets/icons/Check.svelte";
@@ -8,38 +9,11 @@
 
     let mounted = false;
 
-    // Intersection Observer for animations
-    let intersectionObserver: IntersectionObserver;
+    // Set up intersection observer for scroll animations
+    useIntersectionObserver();
 
     onMount(() => {
         mounted = true;
-
-        // Set up intersection observer for scroll animations
-        intersectionObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            },
-            { 
-                threshold: 0.1,
-                rootMargin: "-50px 0px -50px 0px"
-            },
-        );
-
-        document
-            .querySelectorAll(".fade-in, .slide-in-left, .slide-in-right")
-            .forEach((el) => {
-                intersectionObserver.observe(el);
-            });
-
-        return () => {
-            if (intersectionObserver) {
-                intersectionObserver.disconnect();
-            }
-        };
     });
 </script>
 

@@ -6,14 +6,11 @@
     import '../app.css';
     import { initWindowAbout } from '$lib/utils/about.js';
   
-  onMount(() => {
-    initWindowAbout();
-  });
-    
     let scrollY = 0;
     let mounted = false;
     
     onMount(() => {
+        initWindowAbout();
         mounted = true;
     });
 </script>
