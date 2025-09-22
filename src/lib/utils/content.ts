@@ -28,6 +28,9 @@ export const siteContent = {
     },
     footer: {
       description: "Professional websites for professionals.",
+      contact: {
+        email: "arielpillemer@gmail.com"
+      },
       services: {
         title: "Services",
         items: [
@@ -40,6 +43,12 @@ export const siteContent = {
         title: "Connect",
         items: [
           { label: "Get in Touch", href: "/contact" }
+        ]
+      },
+      legal: {
+        title: "Legal",
+        items: [
+          { label: "Privacy Policy", href: "/privacy" }
         ]
       },
       copyright: "© 2024 AP Forge. All rights reserved."
@@ -429,6 +438,226 @@ export const siteContent = {
     formSelects: {
         timeline: "Select timeline",
         budget: "Select budget"
+    }
+  },
+  
+  privacy: {
+    meta: {
+      title: "Privacy Policy | Ariel Pillemer",
+      description: "How we collect, use, and protect your personal information when you visit our website or use our services."
+    },
+    header: {
+      title: "Privacy Policy",
+      lastUpdated: "September 22, 2025"
+    },
+    sections: {
+      introduction: {
+        title: "Introduction",
+        content: [
+          "This Privacy Policy explains how Ariel Pillemer (\"we\", \"our\", or \"us\") collects, uses, stores, and protects your personal information when you visit our website or use our services.",
+          "We are committed to protecting your privacy and ensuring that your personal information is handled in accordance with the UK General Data Protection Regulation (GDPR) and the Data Protection Act 2018.",
+          "By using our website or services, you agree to the collection and use of information in accordance with this policy."
+        ]
+      },
+      
+      dataController: {
+        title: "Data Controller",
+        content: [
+          "The data controller for your personal information is:",
+          "Ariel Pillemer",
+          "Location: E17, London, UK",
+          "",
+          "For any questions about this Privacy Policy or how we handle your personal data, please use our contact form."
+        ]
+      },
+      
+      dataCollection: {
+        title: "What Information We Collect",
+        content: [
+          "We collect information you provide directly to us, including:",
+          "",
+          "Contact Form Information:",
+          "• Your name (first and last name)",
+          "• Email address",
+          "• Phone number (optional)",
+          "• Information about your practice",
+          "• Project requirements and preferences",
+          "• Any additional messages you choose to share",
+          "",
+          "Website Usage Information:",
+          "• Your IP address",
+          "• Browser type and version",
+          "• Pages you visit on our site",
+          "• Time spent on pages",
+          "• Referring website information",
+          "",
+          "Cookies and Similar Technologies:",
+          "We use cookies and similar tracking technologies. See our Cookie Policy section below for more details."
+        ]
+      },
+      
+      legalBasis: {
+        title: "Legal Basis for Processing",
+        content: [
+          "We process your personal data under the following legal bases:",
+          "",
+          "Legitimate Interest: We process your contact information to respond to your inquiries and provide quotes for our services. This is necessary for our business operations.",
+          "",
+          "Consent: For any marketing communications or non-essential cookies, we will ask for your explicit consent.",
+          "",
+          "Contract: If you become a client, we process your data to fulfill our contractual obligations to provide web design services."
+        ]
+      },
+      
+      dataUse: {
+        title: "How We Use Your Information",
+        content: [
+          "We use the information we collect to:",
+          "",
+          "• Respond to your inquiries and provide quotes",
+          "• Communicate with you about our services",
+          "• Provide and improve our website and services",
+          "• Comply with legal obligations",
+          "• Protect our rights and prevent fraud",
+          "",
+          "We do not sell, rent, or share your personal information with third parties for their marketing purposes."
+        ]
+      },
+      
+      dataSharing: {
+        title: "Who We Share Your Information With",
+        content: [
+          "We may share your information with:",
+          "",
+          "Service Providers:",
+          "• Formspree (contact form processing) - based in the US with adequate safeguards",
+          "• Email service providers for communication",
+          "• Website hosting providers (Vercel)",
+          "",
+          "Legal Requirements:",
+          "We may disclose your information if required by law or to protect our rights.",
+          "",
+          "All third-party service providers are required to maintain the confidentiality and security of your personal information."
+        ]
+      },
+      
+      dataRetention: {
+        title: "How Long We Keep Your Information",
+        content: [
+          "We retain your personal information for the following periods:",
+          "",
+          "• Contact form inquiries: 2 years from last contact",
+          "• Client project data: 3 years after project completion",
+          "• Website analytics: 26 months maximum",
+          "",
+          "After these periods, we will securely delete your information unless we have a legal obligation to retain it longer."
+        ]
+      },
+      
+      yourRights: {
+        title: "Your Rights",
+        content: [
+          "Under UK GDPR, you have the following rights:",
+          "",
+          "Right of Access: Request a copy of the personal data we hold about you",
+          "",
+          "Right to Rectification: Request correction of inaccurate personal data",
+          "",
+          "Right to Erasure: Request deletion of your personal data",
+          "",
+          "Right to Restrict Processing: Request that we limit how we use your data",
+          "",
+          "Right to Data Portability: Request a copy of your data in a portable format",
+          "",
+          "Right to Object: Object to our processing of your personal data",
+          "",
+          "Right to Withdraw Consent: Where we rely on consent, you can withdraw it at any time",
+          "",
+          "To exercise any of these rights, please contact us using the details in the Data Controller section."
+        ]
+      },
+      
+      security: {
+        title: "Data Security",
+        content: [
+          "We implement appropriate technical and organizational measures to protect your personal information, including:",
+          "",
+          "• SSL encryption for data transmission",
+          "• Secure hosting with regular security updates",
+          "• Access controls to limit who can view your data",
+          "• Regular security assessments",
+          "",
+          "However, no method of transmission over the internet is 100% secure. While we strive to protect your personal information, we cannot guarantee absolute security."
+        ]
+      },
+      
+      cookies: {
+        title: "Cookies Policy",
+        content: [
+          "Our website uses cookies to improve your experience. Cookies are small text files stored on your device.",
+          "",
+          "Types of Cookies We Use:",
+          "",
+          "Strictly Necessary Cookies:",
+          "• Website functionality and security",
+          "• Form submission and error handling",
+          "",
+          "Functional Cookies:",
+          "• Google Fonts (may set cookies for font delivery)",
+          "",
+          "Analytics Cookies (if implemented):",
+          "• Website usage statistics (only with your consent)",
+          "",
+          "You can control cookies through your browser settings. However, disabling certain cookies may affect website functionality."
+        ]
+      },
+      
+      international: {
+        title: "International Transfers",
+        content: [
+          "Some of our service providers are located outside the UK/EEA:",
+          "",
+          "• Formspree (US): Uses Standard Contractual Clauses for data protection",
+          "• Vercel (US): Implements appropriate safeguards for data transfers",
+          "",
+          "We ensure all international transfers comply with UK GDPR requirements and include appropriate safeguards."
+        ]
+      },
+      
+      children: {
+        title: "Children's Privacy",
+        content: [
+          "Our services are not directed to individuals under 16 years of age. We do not knowingly collect personal information from children under 16.",
+          "",
+          "If you become aware that a child has provided personal information to us, please contact us immediately."
+        ]
+      },
+      
+      changes: {
+        title: "Changes to This Policy",
+        content: [
+          "We may update this Privacy Policy from time to time. We will notify you of any changes by:",
+          "",
+          "• Posting the new Privacy Policy on this page",
+          "• Updating the \"Last Updated\" date",
+          "• Emailing existing clients about significant changes",
+          "",
+          "We encourage you to review this Privacy Policy periodically for any changes."
+        ]
+      },
+      
+      contact: {
+        title: "Contact Us",
+        content: [
+          "If you have any questions about this Privacy Policy or our data practices, please contact us:",
+          "",
+          "Contact Form: Use the contact form on our website",
+          "Location: E17, London, UK",
+          "",
+          "Data Protection Concerns:",
+          "If you have concerns about how we handle your data, you can also contact the Information Commissioner's Office (ICO) at ico.org.uk"
+        ]
+      }
     }
   }
 };

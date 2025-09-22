@@ -707,6 +707,19 @@
 					{/key}
 				</div>
 
+				<!-- Privacy Policy Notice -->
+				{#if currentStep === content.steps.length - 1}
+					<div class="mx-8 md:mx-12 mb-4">
+						<div class="text-sm text-slate-600 bg-slate-50 p-4 rounded-lg border">
+							<p>
+								By submitting this form, you agree to our 
+								<a href="/privacy" target="_blank" rel="noopener noreferrer" class="text-slate-900 underline hover:text-slate-700 transition-colors">Privacy Policy</a>
+								and consent to us using your information to respond to your inquiry and provide quotes for our services.
+							</p>
+						</div>
+					</div>
+				{/if}
+
 				<!-- Navigation -->
 				<div
 					class="flex justify-between items-center px-8 md:px-12 py-6"
