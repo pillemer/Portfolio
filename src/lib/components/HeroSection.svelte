@@ -34,7 +34,7 @@
 			{#if mounted}
 				<div in:fly={{ y: 30, duration: 800, delay: 200 }} class="mb-6">
 					<span
-						class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+						class="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium"
 					>
 						{badge}
 					</span>
@@ -46,10 +46,10 @@
 				>
 					{title}
 					{#if titleHighlight}
-						<span class="text-blue-600 relative">
+						<span class="text-primary-600 relative">
 							{titleHighlight}
 							<svg
-								class="absolute -bottom-2 left-0 w-full h-3 text-blue-200"
+								class="absolute -bottom-2 left-0 w-full h-3 text-primary-200"
 								viewBox="0 0 200 12"
 								fill="none"
 							>
@@ -81,15 +81,15 @@
 		<!-- Floating Elements -->
 		{#if mounted && showFloatingElements}
 			<div
-				class="absolute top-20 left-10 w-20 h-20 bg-blue-100 rounded-full opacity-60 animate-bounce"
+				class="absolute top-20 left-10 w-20 h-20 bg-primary-100 rounded-full opacity-60 animate-bounce"
 				style="animation-delay: 0s; animation-duration: 3s;"
 			></div>
 			<div
-				class="absolute top-40 right-20 w-16 h-16 bg-slate-200 rounded-full opacity-40 animate-bounce"
+				class="absolute top-40 right-20 w-16 h-16 bg-surface-secondary rounded-full opacity-40 animate-bounce"
 				style="animation-delay: 1s; animation-duration: 4s;"
 			></div>
 			<div
-				class="absolute bottom-40 left-20 w-12 h-12 bg-blue-200 rounded-full opacity-50 animate-bounce"
+				class="absolute bottom-40 left-20 w-12 h-12 bg-primary-200 rounded-full opacity-50 animate-bounce"
 				style="animation-delay: 2s; animation-duration: 5s;"
 			></div>
 		{/if}

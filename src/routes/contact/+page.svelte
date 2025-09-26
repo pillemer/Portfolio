@@ -108,7 +108,7 @@
 			in:scale={{ duration: 600, easing: quintOut }}
 		>
 			<div
-				class="bg-white rounded-3xl p-8 shadow-xl border border-slate-200/50"
+				class="bg-surface-primary rounded-3xl p-8 shadow-xl border border-border-primary/50"
 			>
 				<div
 					class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
@@ -127,10 +127,10 @@
 						/>
 					</svg>
 				</div>
-				<h2 class="text-2xl font-bold text-slate-900 mb-4">
+				<h2 class="text-2xl font-bold text-content-primary mb-4">
 					{content.successMessage.title}
 				</h2>
-				<p class="text-slate-600 mb-6">
+				<p class="text-content-secondary mb-6">
 					{content.successMessage.message}
 				</p>
 				<div class="space-y-3">
@@ -168,10 +168,10 @@
 		<div class="max-w-4xl mx-auto">
 			<!-- Header -->
 			<div class="text-center mb-12" in:fade={{ duration: 800 }}>
-				<h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+				<h1 class="text-4xl md:text-5xl font-bold text-content-primary mb-4">
 					{content.header.title}
 				</h1>
-				<p class="text-xl text-slate-600 max-w-2xl mx-auto">
+				<p class="text-xl text-content-secondary max-w-2xl mx-auto">
 					{content.header.subtitle}
 				</p>
 			</div>

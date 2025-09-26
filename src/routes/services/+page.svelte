@@ -34,7 +34,7 @@
     />
 
     <!-- Services Grid -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-surface-primary">
         <div class="container-custom">
             <div class="max-w-6xl mx-auto">
                 <SectionHeader 
@@ -45,14 +45,14 @@
                 <!-- Service Packages -->
                 <div class="grid grid-cols-1 gap-8">
                     <!-- Base Package -->
-                    <div class="fade-in p-8 rounded-2xl border-2 border-blue-600 bg-white hover:shadow-lg transition-shadow">
+                    <div class="fade-in p-8 rounded-2xl border-2 border-primary-600 bg-surface-primary hover:shadow-lg transition-shadow">
                         <div class="grid md:grid-cols-2 gap-8">
                             <div>
                                 <h3 class="heading-3 mb-2">{siteContent.services.packages.website.title}</h3>
-                                <p class="text-slate-600 mb-4">{siteContent.services.packages.website.description}</p>
+                                <p class="text-content-secondary mb-4">{siteContent.services.packages.website.description}</p>
                                 <div class="flex items-baseline mb-4">
                                     <span class="text-4xl font-bold">{siteContent.services.packages.website.price}</span>
-                                    <span class="text-slate-600 ml-2">{siteContent.services.packages.website.priceDetail}</span>
+                                    <span class="text-content-secondary ml-2">{siteContent.services.packages.website.priceDetail}</span>
                                 </div>
                                 <a href="/contact" class="btn btn-primary inline-block">Get Started</a>
                             </div>
@@ -72,12 +72,12 @@
                     <!-- Add-ons -->
                     <div class="grid md:grid-cols-2 gap-8">
                         <!-- Booking System Add-on -->
-                        <div class="fade-in p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-shadow">
+                        <div class="fade-in p-8 rounded-2xl border border-border-primary bg-surface-primary hover:shadow-lg transition-shadow">
                             <h3 class="heading-3 mb-2">{siteContent.services.packages.bookingSystem.title}</h3>
-                            <p class="text-slate-600 mb-4">{siteContent.services.packages.bookingSystem.description}</p>
+                            <p class="text-content-secondary mb-4">{siteContent.services.packages.bookingSystem.description}</p>
                             <div class="flex items-baseline mb-4">
                                 <span class="text-4xl font-bold">{siteContent.services.packages.bookingSystem.price}</span>
-                                <span class="text-slate-600 ml-2">{siteContent.services.packages.bookingSystem.priceDetail}</span>
+                                <span class="text-content-secondary ml-2">{siteContent.services.packages.bookingSystem.priceDetail}</span>
                             </div>
                             <ul class="space-y-4 mb-8">
                                 {#each siteContent.services.packages.bookingSystem.features as feature}
@@ -90,12 +90,12 @@
                         </div>
 
                         <!-- Payment System Add-on -->
-                        <div class="fade-in p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-shadow">
+                        <div class="fade-in p-8 rounded-2xl border border-border-primary bg-surface-primary hover:shadow-lg transition-shadow">
                             <h3 class="heading-3 mb-2">{siteContent.services.packages.paymentSystem.title}</h3>
-                            <p class="text-slate-600 mb-4">{siteContent.services.packages.paymentSystem.description}</p>
+                            <p class="text-content-secondary mb-4">{siteContent.services.packages.paymentSystem.description}</p>
                             <div class="flex items-baseline mb-4">
                                 <span class="text-4xl font-bold">{siteContent.services.packages.paymentSystem.price}</span>
-                                <span class="text-slate-600 ml-2">{siteContent.services.packages.paymentSystem.priceDetail}</span>
+                                <span class="text-content-secondary ml-2">{siteContent.services.packages.paymentSystem.priceDetail}</span>
                             </div>
                             <ul class="space-y-4 mb-8">
                                 {#each siteContent.services.packages.paymentSystem.features as feature}
@@ -113,7 +113,7 @@
     </section>
 
     <!-- Process Section -->
-    <section class="py-24 bg-slate-50">
+    <section class="py-24 bg-surface-secondary">
         <div class="container-custom">
             <div class="max-w-4xl mx-auto">
                 <SectionHeader 
@@ -135,7 +135,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-surface-primary">
         <div class="container-custom">
             <div class="max-w-4xl mx-auto text-center">
                 <SectionHeader 

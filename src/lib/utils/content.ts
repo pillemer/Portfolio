@@ -29,7 +29,7 @@ export const siteContent = {
     footer: {
       description: "Professional websites for professionals.",
       contact: {
-        email: "arielpillemer@gmail.com"
+        email: "info@apforge.co.uk"
       },
       services: {
         title: "Services",
@@ -604,9 +604,6 @@ export const siteContent = {
           "",
           "Functional Cookies:",
           "• Google Fonts (may set cookies for font delivery)",
-          "",
-          "Analytics Cookies (if implemented):",
-          "• Website usage statistics (only with your consent)",
           "",
           "You can control cookies through your browser settings. However, disabling certain cookies may affect website functionality."
         ]

@@ -6,8 +6,8 @@
     export let title: string;
     export let description: string;
     export let icon: ComponentType;
-    export let iconBgColor = "bg-blue-100";
-    export let iconColor = "text-blue-600";
+    export let iconBgColor = "bg-primary-100";
+    export let iconColor = "text-primary-600";
     export let linkText = "Learn more";
     export let linkHref = "/services";
     export let delay: keyof typeof ANIMATION_DELAYS = "short";

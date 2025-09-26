@@ -14,7 +14,7 @@
 >
     <div class="relative">
         <div
-            class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
+            class="w-20 h-20 bg-primary-600 text-content-inverse rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
         >
             {number}
         </div>

@@ -31,14 +31,14 @@
     />
 
     <!-- Main Content Section -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-surface-primary">
         <div class="container-custom">
             <div class="max-w-3xl mx-auto">
                 <!-- Experience -->
                 <div class="mb-16 fade-in">
                     <h2 class="heading-2 mb-6">{siteContent.about.sections.approach.title}</h2>
                     {#each siteContent.about.sections.approach.content as paragraph}
-                        <p class="body-regular mb-6 text-slate-600">
+                        <p class="body-regular mb-6 text-content-secondary">
                             {paragraph}
                         </p>
                     {/each}
@@ -49,9 +49,9 @@
                     <h2 class="heading-2 mb-6">{siteContent.about.sections.expertise.title}</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {#each siteContent.about.sections.expertise.services as service}
-                            <div class="p-6 rounded-xl bg-slate-50">
+                            <div class="p-6 rounded-xl bg-surface-secondary">
                                 <h3 class="heading-4 mb-3">{service.title}</h3>
-                                <p class="text-slate-600">{service.description}</p>
+                                <p class="text-content-secondary">{service.description}</p>
                             </div>
                         {/each}
                     </div>
@@ -61,7 +61,7 @@
                 <div class="fade-in">
                     <h2 class="heading-2 mb-6">{siteContent.about.sections.why.title}</h2>
                     {#each siteContent.about.sections.why.content as paragraph}
-                        <p class="body-regular mb-6 text-slate-600">
+                        <p class="body-regular mb-6 text-content-secondary">
                             {paragraph}
                         </p>
                     {/each}

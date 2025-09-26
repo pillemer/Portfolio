@@ -28,8 +28,8 @@
 
 <nav
   class={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-    ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm'
-                 : 'bg-white/60 backdrop-blur-sm'}`}
+    ${isScrolled ? 'bg-surface-primary/80 backdrop-blur-md border-b border-border-primary shadow-sm'
+                 : 'bg-surface-primary/60 backdrop-blur-sm'}`}
 >
 
 	<div class="max-w-6xl mx-auto px-6">
@@ -37,7 +37,7 @@
 			<!-- Logo -->
 			<a 
 				href="/" 
-				class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
+				class="text-xl font-bold text-content-primary hover:text-primary-600 transition-colors"
 				on:click={() => {
 					if (mobileMenuOpen) {
 						toggleMobileMenu();
@@ -75,12 +75,12 @@
 			<div class="hidden md:flex items-center space-x-8">
 				{#each navigation.items as item}
 					<a 
-						href={item.href} 
-						class="relative text-slate-600 hover:text-slate-900 font-medium transition-colors group"
-						class:text-slate-900={currentPath === item.href}
+						href={item.href}
+						class="relative text-content-secondary hover:text-content-primary font-medium transition-colors group"
+						class:text-content-primary={currentPath === item.href}
 					>
 						{item.label}
-						<span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"
+						<span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"
 						      class:w-full={currentPath === item.href}></span>
 					</a>
 				{/each}
@@ -89,7 +89,7 @@
 			<!-- CTA button (hidden on mobile when menu is open) -->
 			<a 
 				href={navigation.cta.href} 
-				class="hidden md:block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-md"
+				class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-md"
 			>
 				{navigation.cta.label}
 			</a>
@@ -133,7 +133,7 @@
 				{#each navigation.items as item}
 					<a 
 						href={item.href}
-						class="block text-slate-800 text-2xl font-medium hover:text-blue-600 transition-colors"
+						class="block text-content-primary text-2xl font-medium hover:text-primary-600 transition-colors"
 						on:click={toggleMobileMenu}
 					>
 						{item.label}
@@ -143,7 +143,7 @@
 				<!-- Mobile CTA -->
 				<a 
 					href={navigation.cta.href}
-					class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+					class="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105"
 					on:click={toggleMobileMenu}
 				>
 					{navigation.cta.label}

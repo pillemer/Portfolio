@@ -59,7 +59,7 @@
 <!-- <section class="section-sm bg-white">
     <div class="container-custom">
         <div class="fade-in text-center mb-16">
-            <p class="text-slate-500 text-sm font-medium mb-8">
+            <p class="text-content-tertiary text-sm font-medium mb-8">
                 {siteContent.home.trust.title}
             </p>
             <div
@@ -68,9 +68,9 @@
                 {#each siteContent.home.trust.badges as badge}
                     <div class="flex items-center justify-center">
                         <div
-                            class="w-24 h-12 bg-slate-100 rounded flex items-center justify-center"
+                            class="w-24 h-12 bg-surface-secondary rounded flex items-center justify-center"
                         >
-                            <span class="text-xs font-medium text-slate-400"
+                            <span class="text-xs font-medium text-content-tertiary"
                                 >{badge.text}</span
                             >
                         </div>
@@ -82,7 +82,7 @@
 </section> -->
 
 <!-- Value Propositions -->
-<section class="section bg-slate-50">
+<section class="section bg-surface-secondary">
     <div class="container-custom">
         <SectionHeader 
             title={siteContent.home.valueProps.title}
@@ -106,7 +106,7 @@
 </section>
 
 <!-- Process Section -->
-<section class="section bg-white" bind:this={processRef}>
+<section class="section bg-surface-primary" bind:this={processRef}>
     <div class="container-custom">
         <SectionHeader 
             title={siteContent.home.process.title}
@@ -127,7 +127,7 @@
 </section>
 
 <!-- Social Proof / Stats -->
-<section class="section-sm bg-blue-600 text-white" bind:this={statsRef}>
+<section class="section-sm bg-primary-600 text-content-inverse" bind:this={statsRef}>
     <div class="container-custom">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             {#each siteContent.home.stats.items as stat, i}
@@ -141,7 +141,7 @@
 </section>
 
 <!-- Final CTA -->
-<section class="section bg-slate-50">
+<section class="section bg-surface-secondary">
     <div class="container-custom text-center">
         <div class="max-w-3xl mx-auto">
             <SectionHeader 

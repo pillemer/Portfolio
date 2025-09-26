@@ -43,11 +43,11 @@
                 <p in:fly={{ y: 20, duration: 800, delay: 200 }} class="heading-3 mb-4">
                     {siteContent.global.error.subheading}
                 </p>
-                <p in:fly={{ y: 20, duration: 800, delay: 400 }} class="body-large mb-12 text-slate-600">
+                <p in:fly={{ y: 20, duration: 800, delay: 400 }} class="body-large mb-12 text-content-secondary">
                     {siteContent.global.error.message}
                 </p>
                 {#if $page.error?.message}
-                    <p in:fly={{ y: 20, duration: 800, delay: 500 }} class="text-sm text-slate-500 mb-12">
+                    <p in:fly={{ y: 20, duration: 800, delay: 500 }} class="text-sm text-content-tertiary mb-12">
                         {$page.error.message}
                     </p>
                 {/if}

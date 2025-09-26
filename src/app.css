@@ -7,6 +7,55 @@
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
+  
+  /* CSS Custom Properties for runtime theme switching */
+  :root {
+    /* Primary color variables - can be overridden for theme switching */
+    --theme-primary-600: #2563eb;  /* Back to blue */
+    --theme-primary-700: #1d4ed8;  /* Back to blue */
+    
+    /* Surface variables */
+    --theme-surface-primary: #ffffff;
+    --theme-surface-secondary: #f8fafc;
+  }
+  
+  /* Alternative theme example */
+  [data-theme="dark"] {
+    --theme-surface-primary: #1e293b;
+    --theme-surface-secondary: #334155;
+  }
+  
+  /* Tailwind v4 custom color definitions */
+  @theme {
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: var(--theme-primary-600);
+    --color-primary-700: var(--theme-primary-700);
+    
+    /* Surface colors - semantic tokens for backgrounds */
+    --color-surface-primary: var(--theme-surface-primary);
+    --color-surface-secondary: var(--theme-surface-secondary);
+    --color-surface-tertiary: #f1f5f9;   /* Static for now */
+
+    /* Content colors - semantic tokens for text and icons */
+    --color-content-primary: #0f172a;
+    --color-content-secondary: #475569;
+    --color-content-tertiary: #64748b;
+    --color-content-inverse: #ffffff;
+
+    /* Border colors - semantic tokens for borders */
+    --color-border-primary: #e2e8f0;
+    --color-border-secondary: #cbd5e1;
+    --color-border-focus: #3b82f6;
+
+    /* Status colors - semantic tokens for states */
+    --color-status-success: #10b981;
+    --color-status-warning: #f59e0b;
+    --color-status-error: #ef4444;
+  }
 }
 
 @layer components {
@@ -16,20 +65,20 @@
   }
   
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md hover:scale-105 focus:ring-blue-500;
+    @apply bg-primary-600 hover:bg-primary-700 text-white shadow-sm hover:shadow-md hover:scale-105 focus:ring-primary-500;
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 shadow-sm hover:shadow-md hover:scale-105 focus:ring-slate-500;
+    @apply bg-surface-primary hover:bg-surface-secondary text-content-primary border border-border-primary shadow-sm hover:shadow-md hover:scale-105 focus:ring-primary-500;
   }
   
   .btn-ghost {
-    @apply bg-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-900 px-4 py-2;
+    @apply bg-transparent hover:bg-surface-secondary text-content-secondary hover:text-content-primary px-4 py-2;
   }
   
   /* Card Components */
   .card {
-    @apply bg-white border border-slate-200 rounded-xl p-6 shadow-sm transition-all duration-200 hover:shadow-md hover:scale-[1.02];
+    @apply bg-surface-primary border border-border-primary rounded-xl p-6 shadow-sm transition-all duration-200 hover:shadow-md hover:scale-[1.02];
   }
   
   .card-hover {
@@ -87,22 +136,22 @@
   
   /* Typography Components */
   .heading-1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-content-primary leading-tight tracking-tight;
   }
   
   .heading-2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-content-primary leading-tight tracking-tight;
   }
   
   .heading-3 {
-    @apply text-2xl md:text-3xl font-semibold text-slate-900 leading-tight;
+    @apply text-2xl md:text-3xl font-semibold text-content-primary leading-tight;
   }
   
   .body-large {
-    @apply text-lg md:text-xl text-slate-600 leading-relaxed;
+    @apply text-lg md:text-xl text-content-secondary leading-relaxed;
   }
   
   .body {
-    @apply text-base text-slate-600 leading-relaxed;
+    @apply text-base text-content-secondary leading-relaxed;
   }
 }
