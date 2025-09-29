@@ -10,51 +10,136 @@
   
   /* CSS Custom Properties for runtime theme switching */
   :root {
-    /* Primary color variables - can be overridden for theme switching */
-    --theme-primary-600: #2563eb;  /* Back to blue */
-    --theme-primary-700: #1d4ed8;  /* Back to blue */
+    /* COMPLETE DEFAULT THEME - All theme colors as variables */
     
-    /* Surface variables */
+    /* Primary color system */
+    --theme-primary-50: #eff6ff;
+    --theme-primary-100: #dbeafe;
+    --theme-primary-200: #bfdbfe;
+    --theme-primary-300: #93c5fd;
+    --theme-primary-500: #3b82f6;
+    --theme-primary-600: #2563eb;
+    --theme-primary-700: #1d4ed8;
+    
+    /* Surface color system - backgrounds */
     --theme-surface-primary: #ffffff;
     --theme-surface-secondary: #f8fafc;
+    --theme-surface-tertiary: #f1f5f9;
+    
+    /* Content color system - text and icons */
+    --theme-content-primary: #0f172a;
+    --theme-content-secondary: #475569;
+    --theme-content-tertiary: #64748b;
+    --theme-content-inverse: #ffffff;
+    
+    /* Border color system */
+    --theme-border-primary: #e2e8f0;
+    --theme-border-secondary: #cbd5e1;
+    --theme-border-focus: #3b82f6;
+    
+    /* Status color system */
+    --theme-status-success: #10b981;
+    --theme-status-warning: #f59e0b;
+    --theme-status-error: #ef4444;
   }
   
-  /* Alternative theme example */
-  [data-theme="dark"] {
-    --theme-surface-primary: #1e293b;
-    --theme-surface-secondary: #334155;
+  /* Earth Theme - Sophisticated earth tones */
+  [data-theme="earth"] {
+    /* Primary color system - using dark cyan as primary */
+    --theme-primary-50: #f0fdfc;      /* Very light cyan tint */
+    --theme-primary-100: #ccfbf1;     /* Light cyan */
+    --theme-primary-200: #99f6e4;     /* Medium light cyan */
+    --theme-primary-300: #5eead4;     /* Medium cyan */
+    --theme-primary-500: #14b8a6;     /* Brighter cyan */
+    --theme-primary-600: #048a81;     /* Your dark cyan - main primary */
+    --theme-primary-700: #036962;     /* Darker cyan for hovers */
+    
+    /* Surface color system - using your cream and beige */
+    --theme-surface-primary: #f7f7f2;   /* Baby powder - main background */
+    --theme-surface-secondary: #e4e6c3; /* Beige - section backgrounds */
+    --theme-surface-tertiary: #ddd8b8;  /* Slightly darker beige */
+    
+    /* Content color system - using dark brown and purple accents */
+    --theme-content-primary: #2f2504;   /* Drab dark brown - main text */
+    --theme-content-secondary: #613f75; /* Finn purple - secondary text */
+    --theme-content-tertiary: #8b6b47;  /* Warm brown - muted text */
+    --theme-content-inverse: #f7f7f2;   /* Baby powder for dark backgrounds */
+    
+    /* Border color system - earth tone borders */
+    --theme-border-primary: #c5c2a8;    /* Muted beige border */
+    --theme-border-secondary: #a69b7b;  /* Darker earth border */
+    --theme-border-focus: #048a81;      /* Dark cyan for focus states */
+    
+    /* Status color system - earth-friendly status colors */
+    --theme-status-success: #059669;    /* Natural green */
+    --theme-status-warning: #d97706;    /* Warm amber */
+    --theme-status-error: #dc2626;      /* Keep red for errors */
+  }
+  
+  /* Burgundy Theme - Rich burgundy and violet tones */
+  [data-theme="burgundy"] {
+    /* Primary color system - using auburn red as primary */
+    --theme-primary-50: #fef2f2;      /* Very light red tint */
+    --theme-primary-100: #fee2e2;     /* Light red */
+    --theme-primary-200: #fecaca;     /* Medium light red */
+    --theme-primary-300: #fca5a5;     /* Medium red */
+    --theme-primary-500: #ef4444;     /* Brighter red */
+    --theme-primary-600: #9e2b25;     /* Your auburn red - main primary */
+    --theme-primary-700: #c53e37;     /* Lighter, brighter red for hovers */
+    
+    /* Surface color system - using your cream and beige with better contrast */
+    --theme-surface-primary: #f7f7f2;   /* Baby powder - main background */
+    --theme-surface-secondary: #e4e6c3; /* Light beige - section backgrounds */
+    --theme-surface-tertiary: #d0c8a0;  /* Medium beige - for button hovers */
+    
+    /* Content color system - using dark brown and english violet */
+    --theme-content-primary: #2f2504;   /* Drab dark brown - main text */
+    --theme-content-secondary: #51355a; /* English violet - secondary text */
+    --theme-content-tertiary: #8b6b47;  /* Warm brown - muted text */
+    --theme-content-inverse: #f7f7f2;   /* Baby powder for dark backgrounds */
+    
+    /* Border color system - burgundy tone borders */
+    --theme-border-primary: #c5c2a8;    /* Muted beige border */
+    --theme-border-secondary: #a69b7b;  /* Darker earth border */
+    --theme-border-focus: #9e2b25;      /* Auburn red for focus states */
+    
+    /* Status color system - burgundy-friendly status colors */
+    --theme-status-success: #059669;    /* Natural green */
+    --theme-status-warning: #d97706;    /* Warm amber */
+    --theme-status-error: #9e2b25;      /* Use your auburn for errors */
   }
   
   /* Tailwind v4 custom color definitions */
   @theme {
-    --color-primary-50: #eff6ff;
-    --color-primary-100: #dbeafe;
-    --color-primary-200: #bfdbfe;
-    --color-primary-300: #93c5fd;
-    --color-primary-500: #3b82f6;
+    /* Primary color system - all variable references */
+    --color-primary-50: var(--theme-primary-50);
+    --color-primary-100: var(--theme-primary-100);
+    --color-primary-200: var(--theme-primary-200);
+    --color-primary-300: var(--theme-primary-300);
+    --color-primary-500: var(--theme-primary-500);
     --color-primary-600: var(--theme-primary-600);
     --color-primary-700: var(--theme-primary-700);
     
     /* Surface colors - semantic tokens for backgrounds */
     --color-surface-primary: var(--theme-surface-primary);
     --color-surface-secondary: var(--theme-surface-secondary);
-    --color-surface-tertiary: #f1f5f9;   /* Static for now */
+    --color-surface-tertiary: var(--theme-surface-tertiary);
 
     /* Content colors - semantic tokens for text and icons */
-    --color-content-primary: #0f172a;
-    --color-content-secondary: #475569;
-    --color-content-tertiary: #64748b;
-    --color-content-inverse: #ffffff;
+    --color-content-primary: var(--theme-content-primary);
+    --color-content-secondary: var(--theme-content-secondary);
+    --color-content-tertiary: var(--theme-content-tertiary);
+    --color-content-inverse: var(--theme-content-inverse);
 
     /* Border colors - semantic tokens for borders */
-    --color-border-primary: #e2e8f0;
-    --color-border-secondary: #cbd5e1;
-    --color-border-focus: #3b82f6;
+    --color-border-primary: var(--theme-border-primary);
+    --color-border-secondary: var(--theme-border-secondary);
+    --color-border-focus: var(--theme-border-focus);
 
     /* Status colors - semantic tokens for states */
-    --color-status-success: #10b981;
-    --color-status-warning: #f59e0b;
-    --color-status-error: #ef4444;
+    --color-status-success: var(--theme-status-success);
+    --color-status-warning: var(--theme-status-warning);
+    --color-status-error: var(--theme-status-error);
   }
 }
 
@@ -69,7 +154,7 @@
   }
   
   .btn-secondary {
-    @apply bg-surface-primary hover:bg-surface-secondary text-content-primary border border-border-primary shadow-sm hover:shadow-md hover:scale-105 focus:ring-primary-500;
+    @apply bg-surface-primary hover:bg-surface-tertiary text-content-primary border border-border-primary shadow-sm hover:shadow-md hover:scale-105 focus:ring-primary-500;
   }
   
   .btn-ghost {
